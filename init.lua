@@ -1,3 +1,3 @@
-require "lipe.options"
-require "lipe.keymaps"
+require "lipe.preferences.options"
+require "lipe.preferences.keymaps"
 
