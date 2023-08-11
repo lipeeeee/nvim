@@ -39,7 +39,6 @@ packer.init {
 }
 
 -- Import and use plugins
--- Don't bother finding a cleaner way to import it, its just fine like this
 local plugins = require("lipe.plugins.plugins")
 return packer.startup(function(use)
   for _, plugin in ipairs(plugins) do

@@ -4,3 +4,4 @@ require "lipe.preferences.keymaps"
 
 -- Plugins
 require "lipe.plugins.init_plugins"
+
