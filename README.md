@@ -2,6 +2,11 @@
 Vim to Neovim migration,
 new neovim dotfile configuration ^^
 
+# Linux Instalation
+```bash
+
+```
+
 # TODO
 - colorscheme
 - LSP
