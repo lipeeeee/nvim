@@ -1,7 +1,6 @@
 -- Preferences
-require "lipe.preferences.options"
-require "lipe.preferences.keymaps"
+require "lipe.preferences"
 
 -- Plugins
-require "lipe.plugins.init_plugins"
+require "lipe.plugins"
 
