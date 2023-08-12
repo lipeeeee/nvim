@@ -1,9 +1,9 @@
 -- All plugins
 return {
   -- Core
-  {"wbthomason/packer.nvim"},
-  {"nvim-lua/popup.nvim"},
-  {"nvim-lua/plenary.nvim"},
+  { "wbthomason/packer.nvim" },
+  { "nvim-lua/popup.nvim" },
+  { "nvim-lua/plenary.nvim" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },  
@@ -19,4 +19,10 @@ return {
   -- Colorschemes
   -- { "lunarvim/colorschemes" },
   { "lunarvim/darkplus.nvim" },
+
+  -- LSP
+  { "neovim/nvim-lspconfig" },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "jose-elias-alvarez/null-ls.nvim" },
 }
