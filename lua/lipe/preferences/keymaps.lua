@@ -70,7 +70,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+local theme = "ivy"
 keymap("n", "<leader>tf",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_" ..
+  theme .. "({ previewer = true }))<cr>",
   opts)
-keymap("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tg", "<cmd>Telescope live_grep theme=" .. theme .. "<cr>", opts)
