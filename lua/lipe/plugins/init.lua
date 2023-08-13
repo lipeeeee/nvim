@@ -40,7 +40,7 @@ packer.init {
 
 -- Import and use plugins
 local plugins = require("lipe.plugins.plugins")
-return packer.startup(function(use)
+local res = packer.startup(function(use)
   for _, plugin in ipairs(plugins) do
     use(plugin)
   end
@@ -51,3 +51,8 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
+
+-- Aditional plugin setups
+require("lipe.plugins.telescope")
+
+return res
