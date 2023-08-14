@@ -57,4 +57,5 @@ require("lipe.plugins.telescope")
 require("lipe.plugins.tresitter")
 require("lipe.plugins.autopairs")
 require("lipe.plugins.comment")
+require("lipe.plugins.gitsigns")
 return res

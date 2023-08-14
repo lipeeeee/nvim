@@ -32,11 +32,14 @@ return {
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
 
-  --
+  -- TreeSitter
   {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   },
   { "hiphish/rainbow-delimiters.nvim" },
   { "nvim-treesitter/playground" },
+
+  -- Git
+  { "lewis6991/gitsigns.nvim" },
 }
