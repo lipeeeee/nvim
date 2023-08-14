@@ -29,4 +29,12 @@ return {
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
+
+  --
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  },
+  { "hiphish/rainbow-delimiters.nvim" },
+  { "nvim-treesitter/playground" },
 }

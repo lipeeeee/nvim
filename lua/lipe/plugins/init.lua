@@ -54,5 +54,5 @@ end)
 
 -- Aditional plugin setups
 require("lipe.plugins.telescope")
-
+require("lipe.plugins.tresitter")
 return res
