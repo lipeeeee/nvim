@@ -4,6 +4,7 @@ return {
   { "wbthomason/packer.nvim" },
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
+  { "windwp/nvim-autopairs" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },

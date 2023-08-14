@@ -5,6 +5,8 @@
 char ola[BUFSIZE];
 #undef BUFSIZE
 
+struct a {};
+
 int main(int argc, char *argv[]) {
   char hello[10];
   hello[1] = '1';
