@@ -5,6 +5,7 @@ return {
   { "nvim-lua/popup.nvim" },
   { "nvim-lua/plenary.nvim" },
   { "windwp/nvim-autopairs" },
+  { "numToStr/Comment.nvim" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },
