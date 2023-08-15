@@ -25,8 +25,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -76,3 +74,7 @@ keymap("n", "<leader>tf",
   theme .. "({ previewer = true }))<cr>",
   opts)
 keymap("n", "<leader>tg", "<cmd>Telescope live_grep theme=" .. theme .. "<cr>", opts)
+
+
+-- Nvim tree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

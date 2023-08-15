@@ -58,4 +58,5 @@ require("lipe.plugins.tresitter")
 require("lipe.plugins.autopairs")
 require("lipe.plugins.comment")
 require("lipe.plugins.gitsigns")
+require("lipe.plugins.nvim-tree")
 return res

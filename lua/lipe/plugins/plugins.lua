@@ -6,6 +6,8 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "windwp/nvim-autopairs" },
   { "numToStr/Comment.nvim" },
+  { "kyazdani42/nvim-web-devicons" },
+  { "kyazdani42/nvim-tree.lua" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },
