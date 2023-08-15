@@ -6,8 +6,6 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "windwp/nvim-autopairs" },
   { "numToStr/Comment.nvim" },
-  { "kyazdani42/nvim-web-devicons" },
-  { "kyazdani42/nvim-tree.lua" },
 
   -- Completion
   { "hrsh7th/nvim-cmp" },
@@ -41,6 +39,14 @@ return {
   },
   { "hiphish/rainbow-delimiters.nvim" },
   { "nvim-treesitter/playground" },
+
+  -- NvimTree
+  { "kyazdani42/nvim-web-devicons" },
+  { "kyazdani42/nvim-tree.lua" },
+
+  -- BufferLine
+  { "akinsho/bufferline.nvim" },
+  { "moll/vim-bbye" },
 
   -- Git
   { "lewis6991/gitsigns.nvim" },
