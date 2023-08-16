@@ -1,4 +1,4 @@
-local prefix = "lipe.preferences."
+local prefix = USR .. ".preferences."
 
 require(prefix .. "options")
 require(prefix .. "keymaps")

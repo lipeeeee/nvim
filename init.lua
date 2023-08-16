@@ -1,11 +1,16 @@
+USR = "lipe"
+
+-- Globals
+require(USR .. ".globals")
+
 -- Preferences
-require "lipe.preferences"
+require(USR .. ".preferences")
 
 -- Plugins
-require "lipe.plugins"
+require(USR .. ".plugins")
 
 -- Completion
-require "lipe.cmp"
+require(USR .. ".cmp")
 
 -- LSP
-require "lipe.lsp"
+require(USR .. ".lsp")

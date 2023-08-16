@@ -39,7 +39,7 @@ packer.init {
 }
 
 -- Import and use plugins
-local plugins = require("lipe.plugins.plugins")
+local plugins = require(USR .. ".plugins.plugins")
 local res = packer.startup(function(use)
   for _, plugin in ipairs(plugins) do
     use(plugin)
@@ -53,11 +53,11 @@ local res = packer.startup(function(use)
 end)
 
 -- Aditional plugin setups
-require("lipe.plugins.telescope")
-require("lipe.plugins.tresitter")
-require("lipe.plugins.autopairs")
-require("lipe.plugins.comment")
-require("lipe.plugins.gitsigns")
-require("lipe.plugins.nvim-tree")
-require("lipe.plugins.bufferline")
+require(USR .. ".plugins.telescope")
+require(USR .. ".plugins.tresitter")
+require(USR .. ".plugins.autopairs")
+require(USR .. ".plugins.comment")
+require(USR .. ".plugins.gitsigns")
+require(USR .. ".plugins.nvim-tree")
+require(USR .. ".plugins.bufferline")
 return res

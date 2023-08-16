@@ -3,6 +3,6 @@ if not status_ok then
   return
 end
 
-require("lipe.lsp.mason")
-require("lipe.lsp.handlers").setup()
-require("lipe.lsp.null-ls")
+require(USR .. ".lsp.mason")
+require(USR .. ".lsp.handlers").setup()
+require(USR .. ".lsp.null-ls")

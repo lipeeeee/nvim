@@ -8,7 +8,5 @@ new neovim dotfile configuration ^^
 ```
 
 # TODO
-- colorscheme
-- LSP
 - Bottom bar customiuzation
-- idk, but there are more
+- Migrate to lazy 
