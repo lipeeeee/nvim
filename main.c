@@ -6,7 +6,7 @@ typedef struct {
 
 int main(){
   Ola adwiao; 
-
+  
   if (1 == 1){      
   }
 }
