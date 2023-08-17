@@ -4,7 +4,7 @@ new neovim dotfile configuration ^^
 
 # Linux Instalation
 ```bash
-	git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 ```
 
 # TODO
