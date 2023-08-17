@@ -7,7 +7,6 @@ require(USR .. ".globals")
 require(USR .. ".preferences")
 
 -- Plugins
--- Setup lazy first..
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -20,10 +19,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({{import = "lipe.plugins"}})
+require("lazy").setup("lipe.plugins")
 
--- Completion
-require(USR .. ".cmp")
-
--- LSP
-require(USR .. ".lsp")
+-- After plugins loader
+require(USR .. ".preferences.colorscheme")

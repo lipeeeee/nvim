@@ -1,4 +1,6 @@
 -- All plugins
+
+return {}
 return {
   -- Core
   { "wbthomason/packer.nvim" },
