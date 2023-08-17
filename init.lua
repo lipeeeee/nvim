@@ -25,5 +25,9 @@ require("lazy").setup({
   {import=USR .. ".plugins.ui"}
 })
 
--- After plugins loader
+-- After plugin setup..
+-- Set colorscheme
 require(USR .. ".preferences.colorscheme")
+
+-- Aditional plugin configuration
+require(USR .. ".config")
