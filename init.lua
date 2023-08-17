@@ -19,7 +19,11 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("lipe.plugins")
+require("lazy").setup({
+  {import=USR .. ".plugins.core"},
+  {import=USR .. ".plugins.lsp"},
+  {import=USR .. ".plugins.ui"}
+})
 
 -- After plugins loader
 require(USR .. ".preferences.colorscheme")
