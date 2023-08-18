@@ -1,5 +1,5 @@
 return {
-  { 
+  {
     "williamboman/mason.nvim" ,
     opts = {
 			ui = {
@@ -11,8 +11,8 @@ return {
 			}
 		},
   },
-  { 
-		"williamboman/mason-lspconfig.nvim", 
+  {
+		"williamboman/mason-lspconfig.nvim",
 	  opts = {
       ensure_installed = { "clangd", "lua_ls", "pyright" }
     }

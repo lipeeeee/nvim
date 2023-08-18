@@ -13,3 +13,5 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - Darker colorscheme
 - Gitsigns
 - Make so nvim tree doesnt highlight
+- whichkey
+- see telescope ytvideo to configure better
