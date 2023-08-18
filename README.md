@@ -9,5 +9,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 
 # TODO
 - LSPPPPPP config
+- CMP dropdown configuration
+- Darker colorscheme
 - Gitsigns
-- 
+- Make so nvim tree doesnt highlight
+- Global diagnostics signs

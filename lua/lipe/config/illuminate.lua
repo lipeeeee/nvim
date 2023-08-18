@@ -17,7 +17,8 @@ illuminate.configure({
   filetype_overrides = {},
   -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
   filetypes_denylist = {
-      -- 'dirvish',
+    "NivmTree"
+    -- 'dirvish',
       -- 'fugitive',
   },
   -- filetypes_allowlist: filetypes to illuminate, this is overridden by filetypes_denylist
