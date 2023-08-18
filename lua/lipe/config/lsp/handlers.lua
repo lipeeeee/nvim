@@ -10,11 +10,12 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "E" },
-		{ name = "DiagnosticSignWarn", text = "W" },
-		{ name = "DiagnosticSignHint", text = "H" },
-		{ name = "DiagnosticSignInfo", text = "I" },
+	local pref_signs = require(USR .. ".preferences.signs")
+  local signs = {
+		{ name = "DiagnosticSignError", text = pref_signs["ERROR"] },
+		{ name = "DiagnosticSignWarn", text = pref_signs["WARN"] },
+		{ name = "DiagnosticSignHint", text = pref_signs["HINT"] },
+		{ name = "DiagnosticSignInfo", text = pref_signs["INFO"] },
 
 		-- { name = "DiagnosticSignError", text = "" },
 		-- { name = "DiagnosticSignWarn", text = "" },

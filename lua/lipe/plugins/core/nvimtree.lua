@@ -1,6 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   config = function()
+	  local pref_signs = require(USR .. ".preferences.signs")
     local nvim_tree = require("nvim-tree")
     -- local nvim_tree_config = require("nvim-tree.config")
 
@@ -43,14 +44,14 @@ return {
         enable = true,
         show_on_dirs = true,
         icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
+          hint = pref_signs["HINT"],
+          info = pref_signs["INFO"],
+          warning = pref_signs["WARN"],
+          error = pref_signs["ERROR"]
         },
       },
       view = {
-        width = 30,
+        width = 35,
         side = "left",
         -- mappings = {
         --   list = {
