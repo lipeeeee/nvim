@@ -14,7 +14,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 # TODO
 - LSPPPPPP config
 - CMP dropdown configuration
-- Darker colorscheme
+- Bufferline config
+- Rainbow delimiters config
 - Gitsigns
 - Make so nvim tree doesnt highlight
 - whichkey
