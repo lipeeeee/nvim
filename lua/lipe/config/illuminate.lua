@@ -19,7 +19,7 @@ illuminate.configure({
   filetypes_denylist = {
     "NivmTree"
     -- 'dirvish',
-      -- 'fugitive',
+    -- 'fugitive',
   },
   -- filetypes_allowlist: filetypes to illuminate, this is overridden by filetypes_denylist
   filetypes_allowlist = {},
