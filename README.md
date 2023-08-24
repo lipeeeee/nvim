@@ -1,6 +1,6 @@
 # .nvim
 Vim to Neovim migration,
-new neovim dotfile configuration ^^
+new neovim dotfile configuration ^^.
 
 # Linux Instalation
 ```bash
