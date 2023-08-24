@@ -19,10 +19,9 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 # whichkey mapping left:
 - comment.lua
 - gitsigns.lua
+- telescope.lua
 
 # IN-DEPTH CONFIG TODO:
-- telescope.lua
-- treesitter.lua
 - cmp.lua
 - illuminate.lua
 - lspconfig.lua
@@ -40,4 +39,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - nvimtree.lua
 - plenary.lua
 - rbdelimiters.lua
+- telescope.lua
+- treesitter.lua
 
