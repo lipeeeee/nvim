@@ -95,7 +95,7 @@ cmp.setup {
       "i",
       "s",
     }),
-  },
+},
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -106,25 +106,6 @@ cmp.setup {
 
       return kind
     end,
-    -- format = function(entry, vim_item)
-    --   local lspkind_ok, lspkind = pcall(require, "lspkind")
-    --   if not lspkind_ok then
-    --     -- From kind_icons array
-    --     vim_item.abbr = string.format('%s', vim_item.kind) -- This concatonates the icons with the name of the item kind
-    --     vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-    --     -- Source
-    --     vim_item.menu = ({
-    --       nvim_lsp = "(LSP)",
-    --       luasnip = "(LuaSnip)",
-    --       buffer = "(Buffer)",
-    --       path = "(Path)",
-    --     })[entry.source.name]
-    --     return vim_item
-    --   else
-    --     -- From lspkind
-    --     return lspkind.cmp_format()(entry, vim_item)
-    --   end
-    -- end
     -- format = function(entry, vim_item)
     --   -- Kind icons
     --   vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)

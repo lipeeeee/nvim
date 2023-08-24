@@ -16,6 +16,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - toggleterm
 - dashboard
 - wilder
+- Trouble.nvim
 - Linters, formatters, etc for null-ls
 
 # whichkey mapping left:
@@ -24,10 +25,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - telescope.lua
 
 # IN-DEPTH CONFIG TODO:
-- illuminate.lua
-- lspconfig.lua
-- luasnip.lua
-- mason.lua
 - nullls.lua
 - bufferline.lua
 - colorscheme.lua
@@ -43,4 +40,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - telescope.lua
 - treesitter.lua
 - cmp.lua
+- illuminate.lua
+- lspconfig.lua
+- luasnip.lua
+- mason.lua
 
