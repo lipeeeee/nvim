@@ -61,6 +61,9 @@ return {
         --   },
         -- },
       },
-    } 
+      filters = {
+        dotfiles = true,
+  	  },
+    }
   end,
 }

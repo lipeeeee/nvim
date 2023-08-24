@@ -16,11 +16,11 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - toggleterm
 - Linters, formatters, etc for null-ls
 
-# IN-DEPTH CONFIG TODO:
+# whichkey mapping left:
 - comment.lua
-- devicons.lua
 - gitsigns.lua
-- nvimtree.lua
+
+# IN-DEPTH CONFIG TODO:
 - plenary.lua
 - rbdelimiters.lua
 - telescope.lua
@@ -36,4 +36,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 
 # IN-DEPTH CONFIG DONE:
 - autopairs.lua
+- comment.lua
+- devicons.lua
+- gitsigns.lua
+- nvimtree.lua
 
