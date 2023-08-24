@@ -29,5 +29,5 @@ return {
       highlight = "PmenuSel",
       highlight_grey = "LineNr",
     },
-  }
+  },
 }

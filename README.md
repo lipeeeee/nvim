@@ -17,7 +17,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - Linters, formatters, etc for null-ls
 
 # IN-DEPTH CONFIG TODO:
-- autopairs.lua
 - comment.lua
 - devicons.lua
 - gitsigns.lua
@@ -34,3 +33,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - nullls.lua
 - bufferline.lua
 - colorscheme.lua
+
+# IN-DEPTH CONFIG DONE:
+- autopairs.lua
+
