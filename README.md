@@ -14,6 +14,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 # MISSING PLUGINS
 - whichkey
 - toggleterm
+- dashboard
+- wilder
 - Linters, formatters, etc for null-ls
 
 # whichkey mapping left:
@@ -22,7 +24,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - telescope.lua
 
 # IN-DEPTH CONFIG TODO:
-- cmp.lua
 - illuminate.lua
 - lspconfig.lua
 - luasnip.lua
@@ -41,4 +42,5 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - rbdelimiters.lua
 - telescope.lua
 - treesitter.lua
+- cmp.lua
 
