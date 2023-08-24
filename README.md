@@ -50,7 +50,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
  1328 total
 ```
 # Tree
-````bash
+```bash
 .
 ├── LICENSE
 ├── README.md
