@@ -9,7 +9,8 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 
 # Metrics :)
 ## Lines of code
-   33 ./init.lua
+```bash
+    33 ./init.lua
     6 ./lua/lipe/preferences/init.lua
    46 ./lua/lipe/preferences/options.lua
    80 ./lua/lipe/preferences/keymaps.lua
@@ -47,8 +48,9 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
    47 ./lua/lipe/config/gitsigns.lua
   135 ./lua/lipe/config/telescope.lua
  1328 total
-
+```
 # Tree
+````bash
 .
 ├── LICENSE
 ├── README.md
@@ -102,6 +104,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 └── main.c
 
 9 directories, 41 files
+```
 
 # Dependencies
 - Lazy loading moves files around so might need admin/root privileges
