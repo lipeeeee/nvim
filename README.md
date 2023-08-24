@@ -21,7 +21,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - gitsigns.lua
 
 # IN-DEPTH CONFIG TODO:
-- plenary.lua
 - rbdelimiters.lua
 - telescope.lua
 - treesitter.lua
@@ -40,4 +39,5 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - devicons.lua
 - gitsigns.lua
 - nvimtree.lua
+- plenary.lua
 

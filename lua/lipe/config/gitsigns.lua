@@ -1,5 +1,6 @@
 local status_ok, gitsigns = pcall(require, 'gitsigns')
 if not status_ok then
+  vim.notify("[CONFIG] FAILED TO LOAD GITSIGNS")
   return
 end
 
@@ -10,7 +11,7 @@ gitsigns.setup {
     delete       = { text = '_' },
     topdelete    = { text = '‾' },
     changedelete = { text = '~' },
-    untracked    = { text = '|' }, -- '┆' 
+    untracked    = { text = '│' }, -- '┆' 
   },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`

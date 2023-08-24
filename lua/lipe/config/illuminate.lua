@@ -1,5 +1,6 @@
 local status_ok, illuminate = pcall(require, 'illuminate')
 if not status_ok then
+  vim.notify("[CONFIG] FAILED TO LOAD ILLUMINATE")
   return
 end
 
