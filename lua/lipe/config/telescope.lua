@@ -9,8 +9,9 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "> ",
+    selection_caret = "> ",
+    color_devicons = true,
     -- path_display = { "smart" },
 
     mappings = {
@@ -88,10 +89,47 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case", -- this is default
+    },
+    file_browser = {
+      hidden = true,
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor(),
+    },
+    -- Bookmarks don't work in wsl :( - lipe
+    bookmarks = {
+      selected_browser = "brave",
+      url_open_command = "open",
+      config_dir = "/mnt/c/Users/filip/AppData/Local/BraveSoftware/Brave-Browser/User Data"
+    },
   },
 }
+
+-- 🔭 Extensions
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim
+telescope.load_extension "file_browser"
+
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
+telescope.load_extension "ui-select"
+
+-- https://github.com/dhruvmanila/telescope-bookmarks.nvim
+-- <space>b
+telescope.load_extension "bookmarks"
+
+-- https://github.com/cljoly/telescope-repo.nvim
+-- <leader>rl
+telescope.load_extension "repo"
+
+-- https://github.com/AckslD/nvim-neoclip.lua
+-- <C-n>
+telescope.load_extension "neoclip"
+
+-- GitHub CLI → local version
+telescope.load_extension "gh"
+
+
