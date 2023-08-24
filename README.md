@@ -17,17 +17,13 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - dashboard
 - wilder
 - Trouble.nvim
-- Linters, formatters, etc for null-ls
+- Status bar
+- Done for C.... Linters, formatters, etc for null-ls
 
 # whichkey mapping left:
 - comment.lua
 - gitsigns.lua
 - telescope.lua
-
-# IN-DEPTH CONFIG TODO:
-- nullls.lua
-- bufferline.lua
-- colorscheme.lua
 
 # IN-DEPTH CONFIG DONE:
 - autopairs.lua
@@ -44,4 +40,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - lspconfig.lua
 - luasnip.lua
 - mason.lua
+- nullls.lua
+- bufferline.lua
+- colorscheme.lua
 
