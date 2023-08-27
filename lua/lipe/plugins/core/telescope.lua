@@ -3,7 +3,7 @@ return {
     "nvim-telescope/telescope.nvim", tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function ()
-      local telescope = require("telecope")
+      local telescope = require("telescope")
       local actions = require("telescope.actions")
 
       telescope.setup {
@@ -132,7 +132,6 @@ return {
       -- GitHub CLI → local version
       telescope.load_extension "gh"
     end,
-    lazy = true
   },
 
   -- Extensions

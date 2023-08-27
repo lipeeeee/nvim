@@ -29,6 +29,3 @@ require("lazy").setup({
 -- Set colorscheme, & keymaps(requires which-key)
 require(USR .. ".preferences.colorscheme")
 require(USR .. ".preferences.keymaps")
-
--- Aditional plugin configuration
-require(USR .. ".config")
