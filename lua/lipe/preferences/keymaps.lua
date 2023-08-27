@@ -68,13 +68,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope --
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-local theme = "ivy"
-keymap("n", "<leader>tf",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_" ..
-  theme .. "({ previewer = true }))<cr>",
-  opts)
-keymap("n", "<leader>tg", "<cmd>Telescope live_grep theme=" .. theme .. "<cr>", opts)
-
+-- local theme = "ivy"
+-- keymap("n", "<leader>tf",
+--   "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_" ..
+--   theme .. "({ previewer = true }))<cr>",
+--   opts)
+-- keymap("n", "<leader>tg", "<cmd>Telescope live_grep theme=" .. theme .. "<cr>", opts)
+--
 
 -- Nvim tree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
