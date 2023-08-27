@@ -122,6 +122,7 @@ return {
           f = { "<cmd>Telescope find_files<cr>", "Find File" },
           r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
           b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+          c = { "<cmd>Telescope neoclip<cr>", "Clipboard"}
         },
       },
   })

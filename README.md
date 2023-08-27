@@ -110,6 +110,9 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - Lazy loading moves files around so might need admin/root privileges
 - npm for language server config
 
+# TODO 
+- fix illuminate in nvimtree
+
 # MISSING PLUGINS
 - whichkey
 - toggleterm
@@ -117,6 +120,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - wilder
 - Trouble.nvim
 - Status bar
+- Fugitive
 - Done for C.... Linters, formatters, etc for null-ls
 
 # whichkey mapping left:

@@ -4,7 +4,6 @@ return {
 	  local pref_signs = require(USR .. ".preferences.signs")
     local nvim_tree = require("nvim-tree")
     -- local nvim_tree_config = require("nvim-tree.config")
-
     -- local tree_cb = nvim_tree_config.nvim_tree_callback
 
     nvim_tree.setup {
