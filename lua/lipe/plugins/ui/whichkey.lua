@@ -130,6 +130,9 @@ return {
           g = { _cmd("Telescope live_grep"), "Grep" }
         },
 
+        -- ToggleTerm
+        T = { _cmd("ToggleTerm"), "Terminal" },
+
         -- LSP
         l = {
           name = "+LSP",
