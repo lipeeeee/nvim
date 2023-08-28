@@ -17,6 +17,7 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - Add mapping for trouble to vertical split maybe not
 - Check what wincmd/winconfig is
 - Wtf are tabs
+- Very later on: make metrics python script
 
 # MISSING PLUGINS
 - dashboard
