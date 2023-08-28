@@ -1,8 +1,9 @@
 return {
   {
-    "nvim-telescope/telescope.nvim", tag = '0.1.2',
+    "nvim-telescope/telescope.nvim",
+    tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function ()
+    config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")
 
@@ -136,9 +137,9 @@ return {
 
   -- Extensions
   { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
-  { "nvim-telescope/telescope-ui-select.nvim", lazy = true },
-  { "dhruvmanila/telescope-bookmarks.nvim", lazy = true},
-  { "nvim-telescope/telescope-github.nvim", lazy = true},
+  { "nvim-telescope/telescope-ui-select.nvim",    lazy = true },
+  { "dhruvmanila/telescope-bookmarks.nvim",       lazy = true },
+  { "nvim-telescope/telescope-github.nvim",       lazy = true },
   {
     "AckslD/nvim-neoclip.lua",
     config = function() require("neoclip").setup() end,
