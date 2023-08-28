@@ -114,8 +114,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - fix illuminate in nvimtree
 
 # MISSING PLUGINS
-- whichkey
-- toggleterm
 - dashboard
 - wilder
 - Trouble.nvim
@@ -146,4 +144,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 - nullls.lua
 - bufferline.lua
 - colorscheme.lua
+- whichkey
+- toggleterm
 
