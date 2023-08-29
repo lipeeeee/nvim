@@ -24,6 +24,8 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Wtf are tabs
 - Very later on: make metrics python script
 - improvement: ExitPre event can be used to close toggleterm process 
+- TSInstall init fn()
+- Check Noice messages sometimes appear as red foreground
 
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim
