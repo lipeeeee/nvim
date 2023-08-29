@@ -26,13 +26,16 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - improvement: ExitPre event can be used to close toggleterm process 
 
 # MISSING PLUGINS
+See https://github.com/folke/dot/tree/master/nvim
+
 - dashboard
 - Noice.nvim
 - Status bar
 - Fugitive
+- Persitance
+- TODO comments
 
 # whichkey mapping left:
-- comment.lua
 - gitsigns.lua
 - telescope.lua
 

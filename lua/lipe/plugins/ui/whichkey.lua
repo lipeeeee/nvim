@@ -117,7 +117,8 @@ return {
         -- Git
         g = {
           name = "+Git",
-          c = { _cmd("Telescope git_commits"), "Commits" }
+          c = { _cmd("Telescope git_commits"), "Commits" },
+          b = { _cmd("Gitsigns blame_line"), "Blame" },
         },
 
         -- LSP
