@@ -29,7 +29,6 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 
 # MISSING PLUGINS
 - dashboard
-- wilder
 - Noice.nvim
 - Trouble.nvim
 - Status bar
@@ -41,6 +40,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - telescope.lua
 
 # IN-DEPTH CONFIG DONE:
+- wilder
 - autopairs.lua
 - comment.lua
 - devicons.lua

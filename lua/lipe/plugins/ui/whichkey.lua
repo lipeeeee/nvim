@@ -140,7 +140,10 @@ return {
             name = "+Diagnostics",
             p = { _cmd("Telescope diagnostics"), "Project" }
           }
-        }
+        },
+
+        -- Lazy
+        L = { _cmd("Lazy"), "Lazy" }
       },
     })
   end
