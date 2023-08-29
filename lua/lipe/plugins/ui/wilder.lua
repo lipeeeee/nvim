@@ -8,7 +8,7 @@ return {
     local wilder = require("wilder")
     wilder.setup({ modes = { ':', '/', '?' } })
     -- Disable Python remote plugin
-    wilder.set_option('use_python_remote_plugin', 0)
+    -- wilder.set_option('use_python_remote_plugin', 0)
 
     wilder.set_option("renderer", wilder.renderer_mux({
       [":"] = wilder.wildmenu_renderer({
@@ -17,7 +17,7 @@ return {
           accent = wilder.make_hl('WilderAccent', 'Pmenu', { { a = 1 }, { a = 1 }, { foreground = '#f4468f' } }),
         },
       }),
-      
+
       ['/'] = wilder.wildmenu_renderer({
         highlighter = wilder.lua_fzy_highlighter(),
         highlights = {

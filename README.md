@@ -1,6 +1,5 @@
 # .nvim
-Vim to Neovim migration,
-personal nvim cfg
+Vim to Neovim migration, personal nvim cfg
 
 # Linux Instalation
 ```bash
@@ -23,7 +22,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Wtf are tabs
 - Very later on: make metrics python script
 - improvement: ExitPre event can be used to close toggleterm process 
-- TSInstall init fn() check noice or smth for required
+- TSInstall init fn() check trouble or smth for required
 - Check Noice messages sometimes appear as red foreground
 - lualine customization
     - Block(mode) FILENAME[asis] > branch | LSP > diagn >>>> the thing about the current line diagnostics < ENCODING < asis 
@@ -33,14 +32,9 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 See https://github.com/folke/dot/tree/master/nvim
 
 - dashboard
-- Status bar
 - Fugitive
 - Persitance
 - TODO comments
-
-# whichkey mapping left:
-- gitsigns.lua
-- telescope.lua
 
 # IN-DEPTH CONFIG DONE:
 - Noice.nvim

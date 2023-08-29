@@ -128,7 +128,7 @@ return {
       end,
       color = function()
         return { fg = colors.white, bg = col_mode.col }
-     end,
+      end,
       -- padding = { left = 5 },
     }
 
@@ -148,10 +148,11 @@ return {
 
     ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
+    local pref_signs = require(USR .. ".preferences.signs")
     ins_left {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
-      symbols = { error = ' ', warn = ' ', info = ' ' },
+      symbols = { error = pref_signs["ERROR"] .. " ", warn = pref_signs["WARN"] .. " ", info = pref_signs["INFO"] .. " " },
       diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
