@@ -12,7 +12,6 @@ git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
 mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 ```
 
-
 # Dependencies
 - npm, python and a C compiler for basic dependencies
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
