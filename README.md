@@ -23,14 +23,11 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Check what wincmd/winconfig is
 - Wtf are tabs
 - Very later on: make metrics python script
-- Making everything lazyload to an extent
-- Add keymap to split window
 - improvement: ExitPre event can be used to close toggleterm process 
 
 # MISSING PLUGINS
 - dashboard
 - Noice.nvim
-- Trouble.nvim
 - Status bar
 - Fugitive
 
@@ -40,6 +37,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - telescope.lua
 
 # IN-DEPTH CONFIG DONE:
+- Trouble.nvim
 - wilder
 - autopairs.lua
 - comment.lua

@@ -120,6 +120,12 @@ return {
           c = { _cmd("Telescope git_commits"), "Commits" }
         },
 
+        -- LSP
+        l = {
+          name = "+LSP",
+          d = { _cmd("TroubleToggle"), "Diagnostics" },
+        },
+
         -- Telescope
         t = {
           name = "+Telescope",
@@ -130,17 +136,14 @@ return {
           g = { _cmd("Telescope live_grep"), "Grep" }
         },
 
+        -- Quit
+        -- q = {
+        --   name = "+Quit",
+        --   q = { _cmd("Bdelete"), "Buffer Quit" },
+        -- },
+
         -- ToggleTerm
         T = { _cmd("ToggleTerm"), "Terminal" },
-
-        -- LSP
-        l = {
-          name = "+LSP",
-          d = {
-            name = "+Diagnostics",
-            p = { _cmd("Telescope diagnostics"), "Project" }
-          }
-        },
 
         -- Lazy
         L = { _cmd("Lazy"), "Lazy" }

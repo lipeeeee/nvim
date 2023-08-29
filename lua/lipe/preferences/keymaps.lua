@@ -25,6 +25,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Splitting window
+keymap("n", "<A-v>", ":vsp<CR>", opts) -- Virtual split current window
+keymap("n", "<A-h>", ":sp<CR>", opts) -- Horizontal split current window
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -78,4 +82,3 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Nvim tree
 -- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
