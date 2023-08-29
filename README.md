@@ -17,14 +17,13 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
 # TODO 
-- fix illuminate in nvimtree
 - Improve aesthetics of current config maybe check r/unixporn
 - Add mapping for trouble to vertical split maybe not
 - Check what wincmd/winconfig is
 - Wtf are tabs
 - Very later on: make metrics python script
 - improvement: ExitPre event can be used to close toggleterm process 
-- TSInstall init fn() check trouble or smth for required
+- TSInstall init fn() check noice or smth for required
 - Check Noice messages sometimes appear as red foreground
 - lualine customization
     - Block(mode) FILENAME[asis] > branch | LSP > diagn >>>> the thing about the current line diagnostics < ENCODING < asis 
