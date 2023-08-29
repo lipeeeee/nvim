@@ -27,6 +27,8 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - TSInstall init fn() check trouble or smth for required
 - Check Noice messages sometimes appear as red foreground
 - lualine customization
+    - Block(mode) FILENAME[asis] > branch | LSP > diagn >>>> the thing about the current line diagnostics < ENCODING < asis 
+    - color for block mode
 
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim
