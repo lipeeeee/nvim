@@ -16,8 +16,10 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
 # TODO 
+- make preferences have a larger colleciton of icons(git staged, unstaged, commited, etc)
 - YANK from lvim even tho they complicate the process 10x times more
 - Improve aesthetics of current config maybe check r/unixporn
+- lualine flag for paste mode 
 - Add mapping for trouble to vertical split maybe not
 - Check what wincmd/winconfig is
 - Wtf are tabs
