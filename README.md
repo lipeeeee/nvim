@@ -22,6 +22,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
     - color for block mode
     - lualine flag for paste mode 
 - NvimTree H and L should open
+- Consider making signs library globally initialized to save a bit on processing power
 - make preferences have a larger colleciton of icons(git staged, unstaged, commited, etc)
 - Improve aesthetics of current config maybe check r/unixporn
 - Add mapping for trouble to vertical split maybe not

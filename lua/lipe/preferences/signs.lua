@@ -1,6 +1,10 @@
 return {
-    INFO = "I",
-    WARN = "W",
-    ERROR = "E",
-    HINT = "H"
+  -- Diagnostics
+  INFO = "I",
+  WARN = "W",
+  ERROR = "E",
+  HINT = "H",
+
+  -- GIT
+  BRANCH = "",
 }

@@ -1,23 +1,27 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
+    local pref_signs = require(USR .. ".preferences.signs")
     local lualine = require('lualine')
 
     -- Color table for highlights
     -- stylua: ignore
     local colors = {
-      bg       = '#202328',
-      fg       = '#bbc2cf',
-      yellow   = '#ECBE7B',
-      cyan     = '#008080',
-      darkblue = '#081633',
-      green    = '#98be65',
-      orange   = '#FF8800',
-      violet   = '#a9a1e1',
-      magenta  = '#c678dd',
-      blue     = '#51afef',
-      red      = '#ec5f67',
-      white    = '#FFFFFF',
+      bg = "#202328",
+      fg = "#bbc2cf",
+      black = "#000000",
+      grey = "#383838",
+      yellow = "#ECBE7B",
+      d_yellow = "#fcba03",
+      cyan = "#008080",
+      darkblue = "#081633",
+      green = "#98be65",
+      orange = "#FF8800",
+      violet = "#a9a1e1",
+      magenta = "#c678dd",
+      purple = "#c678dd",
+      blue = "#51afef",
+      red = "#ec5f67",
     }
 
     local conditions = {
@@ -38,19 +42,20 @@ return {
     local config = {
       options = {
         disabled_filetypes = {
-          statusline = { "NvimTree" }
+          -- statusline = { "NvimTree" }
         },
 
+        globalstatus = true,
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
-        theme = {
-          -- We are going to use lualine_c an lualine_x as left and
-          -- right section. Both are highlighted by c theme .  So we
-          -- are just setting default looks o statusline
-          normal = { c = { fg = colors.fg, bg = colors.bg } },
-          inactive = { c = { fg = colors.fg, bg = colors.bg } },
-        },
+        -- theme = {
+        --   -- We are going to use lualine_c an lualine_x as left and
+        --   -- right section. Both are highlighted by c theme .  So we
+        --   -- are just setting default looks o statusline
+        --   normal = { c = { fg = colors.fg, bg = colors.bg } },
+        --   inactive = { c = { fg = colors.fg, bg = colors.bg } },
+        -- },
       },
       sections = {
         -- these are to remove the defaults
@@ -85,12 +90,12 @@ return {
 
     local function get_color_mode(key)
       local dict = {
-        n = { col = colors.red, text = "NORMAL" },
+        n = { col = colors.blue, text = "NORMAL" },
         i = { col = colors.green, text = "INSERT" },
-        v = { col = colors.blue, text = "VISUAL" },
+        v = { col = colors.purple, text = "VISUAL" },
         [''] = { col = colors.blue, text = "WHATISTHIS" },
-        V = { col = colors.blue, text = "VISUAL" },
-        c = { col = colors.magenta, text = "COMMAND" },
+        V = { col = colors.purple, text = "VISUAL" },
+        c = { col = colors.yellow, text = "CMMAND" },
         no = { col = colors.red, text = "NO" },
         s = { col = colors.orange, text = "SUB" },
         S = { col = colors.orange, text = "SUB" },
@@ -119,6 +124,7 @@ return {
     -- }
 
 
+    -- MODE
     col_mode = get_color_mode(vim.fn.mode())
     ins_left {
       -- mode component
@@ -127,10 +133,25 @@ return {
         return col_mode.text
       end,
       color = function()
-        return { fg = colors.white, bg = col_mode.col }
+        return { fg = colors.black, bg = col_mode.col }
       end,
       -- padding = { left = 5 },
     }
+
+    -- BRANCH
+    ins_left {
+      'b:gitsigns_head',
+      icon = { pref_signs["BRANCH"], color = { fg = colors.d_yellow } },
+      color = { fg = colors.white, bg = colors.grey, gui = 'bold' },
+    }
+
+    -- SEPERATOR
+    -- ins_left {
+    --   function ()
+    --     return ">"
+    --   end,
+    --   color = { fg = colors.white, gui = 'bold' }
+    -- }
 
     -- ins_left {
     -- 	-- filesize component
@@ -148,7 +169,6 @@ return {
 
     ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-    local pref_signs = require(USR .. ".preferences.signs")
     ins_left {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
@@ -204,11 +224,6 @@ return {
       color = { fg = colors.green, gui = 'bold' },
     }
 
-    ins_right {
-      'branch',
-      icon = '',
-      color = { fg = colors.violet, gui = 'bold' },
-    }
 
     ins_right {
       'diff',
