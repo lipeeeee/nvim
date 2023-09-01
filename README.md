@@ -19,8 +19,8 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - YANK from lvim even tho they complicate the process 10x times more
 - lualine customization
     - Block(mode) FILENAME[asis] > branch | LSP > diagn >>>> the thing about the current line diagnostics < ENCODING < asis 
-    - color for block mode
     - lualine flag for paste mode 
+- filetype disable name section, for nvimtree? 
 - NvimTree H and L should open
 - Consider making signs library globally initialized to save a bit on processing power
 - make preferences have a larger colleciton of icons(git staged, unstaged, commited, etc)
