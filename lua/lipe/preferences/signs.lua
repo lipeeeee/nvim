@@ -5,6 +5,21 @@ return {
   ERROR = "E",
   HINT = "H",
 
-  -- GIT
+  git = {
+    LineAdded = "",
+    LineModified = "",
+    LineRemoved = "",
+    FileDeleted = "",
+    FileIgnored = "◌",
+    FileRenamed = "",
+    FileStaged = "S",
+    FileUnmerged = "",
+    FileUnstaged = "",
+    FileUntracked = "U",
+    Diff = "",
+    Repo = "",
+    Octoface = "",
+    Branch = "",
+  },
   BRANCH = "",
 }

@@ -20,11 +20,14 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - lualine customization
     - Block(mode) FILENAME[asis] > branch | LSP > diagn >>>> the thing about the current line diagnostics < ENCODING < asis 
     - lualine flag for paste mode 
+- CTRL-\ keymap for toggleterm
 - filetype disable name section, for nvimtree? 
 - NvimTree H and L should open
 - Consider making signs library globally initialized to save a bit on processing power
 - make preferences have a larger colleciton of icons(git staged, unstaged, commited, etc)
+- refactor lualine.lua tables into their particular files or file in preferences/
 - Improve aesthetics of current config maybe check r/unixporn
+    - colorscheme check tokyonight from folke
 - Add mapping for trouble to vertical split maybe not
 - Check what wincmd/winconfig is
 - Wtf are tabs
@@ -38,6 +41,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 See https://github.com/folke/dot/tree/master/nvim
 
 - dashboard
+- dressing
 - Fugitive
 - Persitance
 - TODO comments
