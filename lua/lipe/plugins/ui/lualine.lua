@@ -23,6 +23,8 @@ return {
     -- Config
     local config = {
       options = {
+        disabled_filetypes = { "toggleterm" },
+
         globalstatus = true,
         component_separators = '',
         section_separators = '',
@@ -82,6 +84,11 @@ return {
     -- MODE
     ins_left { function()
       col_mode = col_dict[vim.fn.mode()]
+
+      -- This doesn't work because vim.cmd does not return anyth, only prints to notify
+      -- if (vim.cmd("set paste?") == "paste") then
+      --   col_mode = col_mode .. " (P)"
+      -- end
       return col_mode.text
     end,
       color = function()
@@ -196,11 +203,17 @@ return {
     -- Location
     ins_right { 'location',
       color = function()
-        col_mode = col_dict[vim.fn.mode()]
-        return {
-          fg = col_mode.col,
-          bg = colors.grey,
-        }
+        local status, col_mode = pcall(function()
+          return col_dict[vim.fn.mode()]
+        end)
+        if (status and col_mode ~= nil) then
+          return {
+            bg = colors.grey,
+            fg = col_mode.col,
+          }
+        else
+          return {}
+        end
       end
     }
 
@@ -210,11 +223,18 @@ return {
         return "%P/%L"
       end,
       color = function()
-        col_mode = col_dict[vim.fn.mode()]
-        return {
-          bg = col_mode.col,
-          fg = colors.black
-        }
+        local status, col_mode = pcall(function()
+          return col_dict[vim.fn.mode()]
+        end)
+
+        if (status and col_mode ~= nil) then
+          return {
+            bg = col_mode.col,
+            fg = colors.black
+          }
+        else
+          return {}
+        end
       end,
     }
 

@@ -103,6 +103,7 @@ return {
       return "<cmd>" .. command .. "<cr>"
     end
     wk.register({
+      ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
       ["<leader>"] = {
         -- NvimTree Toggle
         e = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
