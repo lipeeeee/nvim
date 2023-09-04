@@ -2,26 +2,9 @@ return {
   "nvim-lualine/lualine.nvim",
   config = function()
     local pref_signs = require(USR .. ".preferences.signs")
+    local colors = require(USR .. ".preferences.colors")
     local lualine = require('lualine')
-
-    -- Color table for highlights
-    local colors = {
-      bg = "#202328",
-      fg = "#bbc2cf",
-      black = "#000000",
-      grey = "#383838",
-      yellow = "#ECBE7B",
-      d_yellow = "#fcba03",
-      cyan = "#008080",
-      darkblue = "#081633",
-      green = "#98be65",
-      orange = "#FF8800",
-      violet = "#a9a1e1",
-      magenta = "#c678dd",
-      purple = "#c678dd",
-      blue = "#51afef",
-      red = "#ec5f67",
-    }
+    local col_mode = nil
 
     local conditions = {
       buffer_not_empty = function()
@@ -93,16 +76,14 @@ return {
       v = { col = colors.purple, text = "VISUAL" },
       V = { col = colors.purple, text = "VISUAL" },
       c = { col = colors.yellow, text = "CMMAND" },
-      R = { col = colors.red, text = "REPLAC" }
+      R = { col = colors.red, text = "REPLAC" },
     }
 
     -- MODE
-    local col_mode = nil
-    ins_left {
-      function()
-        col_mode = col_dict[vim.fn.mode()]
-        return col_mode.text
-      end,
+    ins_left { function()
+      col_mode = col_dict[vim.fn.mode()]
+      return col_mode.text
+    end,
       color = function()
         col_mode = col_dict[vim.fn.mode()]
         return {
@@ -122,7 +103,7 @@ return {
         }
       },
       color = {
-        fg = colors.fg,
+        fg = colors.lualine.fg,
         bg = colors.grey,
         gui = 'bold'
       },
@@ -157,7 +138,11 @@ return {
     ins_right {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
-      symbols = { error = pref_signs["ERROR"] .. " ", warn = pref_signs["WARN"] .. " ", info = pref_signs["INFO"] .. " " },
+      symbols = {
+        error = pref_signs.ERROR .. " ",
+        warn = pref_signs.WARN .. " ",
+        info = pref_signs.INFO .. " "
+      },
       diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
@@ -183,7 +168,7 @@ return {
         end
       end,
       color = {
-        fg = colors.fg,
+        fg = colors.lualine.fg,
         gui = "bold",
       },
       cond = conditions.hide_in_width,
@@ -200,12 +185,12 @@ return {
 
     -- filetype
     ins_right { "filetype",
-      cond = nil,
       padding =
       {
         left = 1,
         right = 1
-      }
+      },
+      cond = nil,
     }
 
     -- Location
@@ -233,32 +218,6 @@ return {
       end,
     }
 
-    --
-    -- ins_right { 'progress', color = { gui = 'bold' } }
-    --
-    -- Insert mid section. You can make any number of sections in neovim :)
-    -- for lualine it's any number greater then 2
-    -- ins_left {
-    --   function()
-    --     return '%='
-    --   end,
-    -- }
-
-    -- Add components to right sections
-    -- ins_right {
-    --   'o:encoding',       -- option component same as &encoding in viml
-    --   fmt = string.upper, -- I'm not sure why it's upper case either ;)
-    --   cond = conditions.hide_in_width,
-    --   color = { fg = colors.green, gui = 'bold' },
-    -- }
-    --
-    -- ins_right {
-    --   'fileformat',
-    --   fmt = string.upper,
-    --   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-    --   color = { fg = colors.green, gui = 'bold' },
-    -- }
-    -- Now don't forget to initialize lualine
     lualine.setup(config)
   end
 }
