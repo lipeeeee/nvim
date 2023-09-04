@@ -19,6 +19,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - NvimTree H and L should open
 - Improve aesthetics of current config maybe check r/unixporn
     - colorscheme check tokyonight from folke
+    - toggleterm dividers, maybe smth with win*?
 - Image seeeeEEEr? saw on r/unixporn https://www.reddit.com/r/unixporn/comments/164xn0p/bspwm_first_rice/
 
 # REFACTOR
