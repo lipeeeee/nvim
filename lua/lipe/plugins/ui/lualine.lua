@@ -44,14 +44,8 @@ return {
         component_separators = '',
         section_separators = '',
         theme = "auto",
-        -- theme = {
-        --   -- We are going to use lualine_c an lualine_x as left and
-        --   -- right section. Both are highlighted by c theme .  So we
-        --   -- are just setting default looks o statusline
-        --   normal = { c = { fg = colors.fg, bg = colors.bg } },
-        --   inactive = { c = { fg = colors.fg, bg = colors.bg } },
-        -- },
       },
+      -- Reset defaults
       sections = {
         lualine_a = {},
         lualine_b = {},
@@ -92,41 +86,25 @@ return {
       end
     end
 
-    -- Maps a color and a text
-    local function get_color_mode(key)
-      local dict = {
-        n = { col = colors.blue, text = "NORMAL" },
-        i = { col = colors.green, text = "INSERT" },
-        v = { col = colors.purple, text = "VISUAL" },
-        [''] = { col = colors.blue, text = "WHATISTHIS" },
-        V = { col = colors.purple, text = "VISUAL" },
-        c = { col = colors.yellow, text = "CMMAND" },
-        no = { col = colors.red, text = "NO" },
-        s = { col = colors.orange, text = "SUB" },
-        S = { col = colors.orange, text = "SUB" },
-        [''] = { col = colors.orange, text = "" },
-        ic = colors.yellow,
-        R = colors.violet,
-        Rv = colors.violet,
-        cv = colors.red,
-        ce = colors.red,
-        r = colors.cyan,
-        rm = colors.cyan,
-        ['r?'] = colors.cyan,
-        ['!'] = colors.red,
-        t = colors.red,
-      }
-      return dict[key]
-    end
+    -- Maps a color and a text to a vim mode
+    local col_dict = {
+      n = { col = colors.blue, text = "NORMAL" },
+      i = { col = colors.green, text = "INSERT" },
+      v = { col = colors.purple, text = "VISUAL" },
+      V = { col = colors.purple, text = "VISUAL" },
+      c = { col = colors.yellow, text = "CMMAND" },
+      R = { col = colors.red, text = "REPLAC" }
+    }
 
     -- MODE
-    col_mode = ""
+    local col_mode = nil
     ins_left {
       function()
-        col_mode = get_color_mode(vim.fn.mode())
+        col_mode = col_dict[vim.fn.mode()]
         return col_mode.text
       end,
       color = function()
+        col_mode = col_dict[vim.fn.mode()]
         return {
           fg = colors.black,
           bg = col_mode.col
@@ -144,7 +122,7 @@ return {
         }
       },
       color = {
-        fg = colors.white,
+        fg = colors.fg,
         bg = colors.grey,
         gui = 'bold'
       },
@@ -175,6 +153,18 @@ return {
     }
 
     -- Right:
+    -- diagnostics
+    ins_right {
+      'diagnostics',
+      sources = { 'nvim_diagnostic' },
+      symbols = { error = pref_signs["ERROR"] .. " ", warn = pref_signs["WARN"] .. " ", info = pref_signs["INFO"] .. " " },
+      diagnostics_color = {
+        color_error = { fg = colors.red },
+        color_warn = { fg = colors.yellow },
+        color_info = { fg = colors.cyan },
+      },
+    }
+
     -- LSP
     ins_right {
       function()
@@ -199,21 +189,53 @@ return {
       cond = conditions.hide_in_width,
     }
 
-    ins_right { 'location' }
-
-    ins_right { 'progress', color = { gui = 'bold' } }
-
+    -- SHIFT
     ins_right {
-      'diagnostics',
-      sources = { 'nvim_diagnostic' },
-      symbols = { error = pref_signs["ERROR"] .. " ", warn = pref_signs["WARN"] .. " ", info = pref_signs["INFO"] .. " " },
-      diagnostics_color = {
-        color_error = { fg = colors.red },
-        color_warn = { fg = colors.yellow },
-        color_info = { fg = colors.cyan },
-      },
+      function()
+        local shiftwidth = vim.api.nvim_buf_get_option(0, "shiftwidth")
+        return pref_signs.ui.Tab .. " " .. shiftwidth
+      end,
+      padding = 1,
     }
 
+    -- filetype
+    ins_right { "filetype",
+      cond = nil,
+      padding =
+      {
+        left = 1,
+        right = 1
+      }
+    }
+
+    -- Location
+    ins_right { 'location',
+      color = function()
+        col_mode = col_dict[vim.fn.mode()]
+        return {
+          fg = col_mode.col,
+          bg = colors.grey,
+        }
+      end
+    }
+
+    -- Progress
+    ins_right { "progress",
+      fmt = function()
+        return "%P/%L"
+      end,
+      color = function()
+        col_mode = col_dict[vim.fn.mode()]
+        return {
+          bg = col_mode.col,
+          fg = colors.black
+        }
+      end,
+    }
+
+    --
+    -- ins_right { 'progress', color = { gui = 'bold' } }
+    --
     -- Insert mid section. You can make any number of sections in neovim :)
     -- for lualine it's any number greater then 2
     -- ins_left {
@@ -223,19 +245,19 @@ return {
     -- }
 
     -- Add components to right sections
-    ins_right {
-      'o:encoding',       -- option component same as &encoding in viml
-      fmt = string.upper, -- I'm not sure why it's upper case either ;)
-      cond = conditions.hide_in_width,
-      color = { fg = colors.green, gui = 'bold' },
-    }
-
-    ins_right {
-      'fileformat',
-      fmt = string.upper,
-      icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-      color = { fg = colors.green, gui = 'bold' },
-    }
+    -- ins_right {
+    --   'o:encoding',       -- option component same as &encoding in viml
+    --   fmt = string.upper, -- I'm not sure why it's upper case either ;)
+    --   cond = conditions.hide_in_width,
+    --   color = { fg = colors.green, gui = 'bold' },
+    -- }
+    --
+    -- ins_right {
+    --   'fileformat',
+    --   fmt = string.upper,
+    --   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+    --   color = { fg = colors.green, gui = 'bold' },
+    -- }
     -- Now don't forget to initialize lualine
     lualine.setup(config)
   end

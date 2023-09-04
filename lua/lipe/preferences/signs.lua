@@ -21,5 +21,8 @@ return {
     Octoface = "",
     Branch = "",
   },
+  ui = {
+    Tab = "󰌒",
+  },
   BRANCH = "",
 }
