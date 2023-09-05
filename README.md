@@ -39,7 +39,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim
 
-- dashboard
+- neovim-session-manager
 - dressing
 - Fugitive
 - Persitance

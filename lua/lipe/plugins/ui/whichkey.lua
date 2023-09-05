@@ -105,6 +105,10 @@ return {
     wk.register({
       ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
       ["<leader>"] = {
+
+        -- Open alpha's dashboard
+        [';'] = { _cmd("Alpha"), "Dashboard" },
+
         -- NvimTree Toggle
         e = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
 
