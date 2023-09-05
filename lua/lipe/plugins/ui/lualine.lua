@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = "VimEnter",
   config = function()
     local pref_signs = require(USR .. ".preferences.signs")
     local colors = require(USR .. ".preferences.colors")
