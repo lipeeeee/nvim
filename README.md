@@ -30,6 +30,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
     - better code.. etc
 
 # POSTPONED
+- Function to dinamically change colorscheme without having to go to config files
 - lualine flag for paste mode 
 - TSInstall init fn() check trouble or smth for required
 - improvement: ExitPre event can be used to close toggleterm process 
