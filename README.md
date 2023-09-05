@@ -16,7 +16,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
 # TODO 
-- NvimTree H and L should open
+- Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
 - Improve aesthetics of current config maybe check r/unixporn
     - colorscheme check tokyonight from folke
     - toggleterm dividers, maybe smth with win*?
@@ -25,7 +25,6 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 # REFACTOR
 - Signs collection
     - Make signs library globally initialized to save a bit on processing power
-    - make preferences have a larger colleciton of icons(git staged, unstaged, commited, etc)
 - refactor lualine.lua 
     - tables into their particular files or file in preferences/
     - better code.. etc
