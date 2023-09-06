@@ -16,7 +16,12 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
 # TODO 
+- Alpha customization
+    - fix bloat in alpha.lua
 - Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
+- custom cursor(color)
+- 80 char line
+- Install script for chmod stuff when running sh scripts
 - Improve aesthetics of current config maybe check r/unixporn
     - colorscheme check tokyonight from folke
     - toggleterm dividers, maybe smth with win*?
@@ -31,6 +36,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 
 # POSTPONED
 - Function to dinamically change colorscheme without having to go to config files
+- spotify-tui integration with neovim (there is like a milion dependencies, not even worth it)
 - lualine flag for paste mode 
 - TSInstall init fn() check trouble or smth for required
 - improvement: ExitPre event can be used to close toggleterm process 

@@ -149,7 +149,8 @@ return {
       symbols = {
         error = pref_signs.ERROR .. " ",
         warn = pref_signs.WARN .. " ",
-        info = pref_signs.INFO .. " "
+        info = pref_signs.INFO .. " ",
+        hint = pref_signs.HINT .. " ",
       },
       diagnostics_color = {
         color_error = { fg = colors.red },

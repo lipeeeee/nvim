@@ -34,14 +34,14 @@ return {
       on_attach = on_attach,
       select_prompts = false,
       view = {
-        adaptive_size = false,
-        centralize_selection = true,
+        -- adaptive_size = false,
+        -- centralize_selection = true,
         width = 35,
-        hide_root_folder = false,
+        -- hide_root_folder = false,
         side = "left",
-        preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
+        -- preserve_window_proportions = false,
+        -- number = false,
+        -- relativenumber = false,
         signcolumn = "yes",
         float = {
           enable = false,
@@ -180,7 +180,7 @@ return {
         },
         open_file = {
           quit_on_open = false,
-          resize_window = false,
+          resize_window = true,
           window_picker = {
             enable = true,
             picker = "default",

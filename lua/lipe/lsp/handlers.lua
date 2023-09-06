@@ -14,15 +14,10 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.setup = function()
   local pref_signs = require(USR .. ".preferences.signs")
   local signs = {
-    { name = "DiagnosticSignError", text = pref_signs["ERROR"] },
-    { name = "DiagnosticSignWarn",  text = pref_signs["WARN"] },
-    { name = "DiagnosticSignHint",  text = pref_signs["HINT"] },
-    { name = "DiagnosticSignInfo",  text = pref_signs["INFO"] },
-
-    -- { name = "DiagnosticSignError", text = "" },
-    -- { name = "DiagnosticSignWarn", text = "" },
-    -- { name = "DiagnosticSignHint", text = "" },
-    -- { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = pref_signs.ERROR },
+    { name = "DiagnosticSignWarn",  text = pref_signs.WARN },
+    { name = "DiagnosticSignHint",  text = pref_signs.HINT },
+    { name = "DiagnosticSignInfo",  text = pref_signs.INFO },
   }
 
   for _, sign in ipairs(signs) do
