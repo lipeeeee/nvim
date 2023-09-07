@@ -1,92 +1,21 @@
 local if_nil = vim.F.if_nil
 local fnamemodify = vim.fn.fnamemodify
 local filereadable = vim.fn.filereadable
+local leader = "SPC"
 
-local all_headers = {
-  { -- 1
-    type = "text",
-    val = {
-      [[ ███████╗    ██████╗ ██████╗  █████╗      █████╗ ██████╗ ██████╗ ███████╗████████╗ █████╗ ██████╗  ]],
-      [[ ██╔════╝    ██╔══██╗██╔══██╗██╔══██╗    ██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗ ]],
-      [[ █████╗      ██████╔╝██████╔╝███████║    ███████║██████╔╝██████╔╝█████╗     ██║   ███████║██████╔╝ ]],
-      [[ ██╔══╝      ██╔═══╝ ██╔══██╗██╔══██║    ██╔══██║██╔══██╗██╔══██╗██╔══╝     ██║   ██╔══██║██╔══██╗ ]],
-      [[ ███████╗    ██║     ██║  ██║██║  ██║    ██║  ██║██║  ██║██║  ██║███████╗   ██║   ██║  ██║██║  ██║ ]],
-      [[ ╚══════╝    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ]],
-      [[                                                                                                   ]],
-      [[████████╗ ██████╗ ██╗   ██╗████████╗    ███████╗██╗   ██╗██╗████████╗███████╗     ██████╗          ]],
-      [[╚══██╔══╝██╔═══██╗██║   ██║╚══██╔══╝    ██╔════╝██║   ██║██║╚══██╔══╝██╔════╝    ██╔════╝▄ ██╗▄    ]],
-      [[   ██║   ██║   ██║██║   ██║   ██║       ███████╗██║   ██║██║   ██║   █████╗      ██║      ████╗    ]],
-      [[   ██║   ██║   ██║██║   ██║   ██║       ╚════██║██║   ██║██║   ██║   ██╔══╝      ██║     ▀╚██╔▀    ]],
-      [[   ██║   ╚██████╔╝╚██████╔╝   ██║       ███████║╚██████╔╝██║   ██║   ███████╗    ╚██████╗  ╚═╝     ]],
-      [[   ╚═╝    ╚═════╝  ╚═════╝    ╚═╝       ╚══════╝ ╚═════╝ ╚═╝   ╚═╝   ╚══════╝     ╚═════╝          ]],
-    },
-    opts = {
-      hl = "Type",
-      position = "center",
-      shrink_margin = false,
-    },
-  },
-  { -- 2
-    type = "text",
-    val = {
-      [[  ██████╗  █████╗ ██╗     ███████╗██╗      █████╗  ]],
-      [[ ██╔════╝ ██╔══██╗██║     ██╔════╝██║     ██╔══██╗ ]],
-      [[ ██║  ███╗███████║██║     █████╗  ██║     ███████║ ]],
-      [[ ██║   ██║██╔══██║██║     ██╔══╝  ██║     ██╔══██║ ]],
-      [[ ╚██████╔╝██║  ██║███████╗███████╗███████╗██║  ██║ ]],
-      [[  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝ ]],
-    },
-    opts = {
-      hl = "Type",
-      position = "center",
-      shrink_margin = false,
-    },
-  },
-  { -- 3
-    type = "text",
-    val = {
-      [[  ___       ___  ________  _______       ]],
-      [[ |\  \     |\  \|\   __  \|\  ___ \      ]],
-      [[ \ \  \    \ \  \ \  \|\  \ \   __/|     ]],
-      [[  \ \  \    \ \  \ \   ____\ \  \_|/__   ]],
-      [[   \ \  \____\ \  \ \  \___|\ \  \_|\ \  ]],
-      [[    \ \_______\ \__\ \__\    \ \_______\ ]],
-      [[     \|_______|\|__|\|__|     \|_______| ]],
-    },
-    opts = {
-      hl = "Type",
-      position = "center",
-      shrink_margin = false,
-    },
-  },
-  -- { -- 4
-  --   type = "terminal",
-  --   command = "cat | " .. os.getenv("HOME") .. "/.config/nvim/lua/" .. USR .. "/sh/starry_night.sh",
-  --   width = 64,
-  --   height = 20,
-  --   opts = {
-  --     hl = "String",
-  --     position = "center",
-  --   },
-  -- },
-  -- { -- 5
-  --   type = "terminal",
-  --   command = "cat | " .. os.getenv("HOME") .. "/.config/nvim/lua/" .. USR .. "/sh/pedro.sh",
-  --   width = 40,
-  --   height = 24,
-  --   opts = {
-  --     hl = "String",
-  --     position = "center",
-  --   },
-  -- },
+local default_mru_ignore = { "gitcommit" }
+local mru_opts = {
+  ignore = function(path, ext)
+    return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))
+  end,
+  autocd = false
 }
 
--- Select random header
-math.randomseed(os.time())
-local selected = all_headers[math.random(#all_headers)]
-local default_header = selected
-
-local leader = "SPC"
+-- Selects random banner out of our banner collection in ../alpha/banners.lua
+local function select_random_banner()
+  local all_headers = require(USR .. ".plugins.ui.alpha.banners")
+  return all_headers[math.random(#all_headers)]
+end
 
 --- @param sc string
 --- @param txt string
@@ -171,15 +100,6 @@ local function file_button(fn, sc, short_fn, autocd)
   return file_button_el
 end
 
-local default_mru_ignore = { "gitcommit" }
-
-local mru_opts = {
-  ignore = function(path, ext)
-    return (string.find(path, "COMMIT_EDITMSG")) or (vim.tbl_contains(default_mru_ignore, ext))
-  end,
-  autocd = false
-}
-
 --- @param start number
 --- @param cwd string? optional
 --- @param items_number number? optional number of items to generate, default = 10
@@ -225,95 +145,113 @@ local function mru_title()
   return "MRU " .. vim.fn.getcwd()
 end
 
-local section = {
-  -- Header/Image for dashboard
-  header = default_header,
-
-  --
-  top_buttons = {
-    type = "group",
-    val = {
-      button("e", "New file", "<cmd>ene <CR>"),
+-- This is called everytime alpha gets called
+-- Builds updated config & sets up
+function UPDATE_ALPHA()
+  math.randomseed(os.time())
+ 
+  -- HEADER
+  local selected_banner = select_random_banner()
+  local default_header = {
+    type = "text",
+    val = selected_banner,
+    opts = {
+      hl = "Type",
+      position = "center",
+      shrink_margin = false,
     },
-  },
-  -- note about MRU: currently this is a function,
-  -- since that means we can get a fresh mru
-  -- whenever there is a DirChanged. this is *really*
-  -- inefficient on redraws, since mru does a lot of I/O.
-  -- should probably be cached, or maybe figure out a way
-  -- to make it a reference to something mutable
-  -- and only mutate that thing on DirChanged
-  mru = {
-    type = "group",
-    val = {
-      { type = "padding", val = 1 },
-      { type = "text",    val = "MRU", opts = { hl = "SpecialComment" } },
-      { type = "padding", val = 1 },
-      {
-        type = "group",
-        val = function()
-          return { mru(10, nil, 5) }
-        end,
+  }
+  local section = {
+    -- Header/Image for dashboard
+    header = default_header,
+
+    --
+    top_buttons = {
+      type = "group",
+      val = {
+        button("e", "New file", "<cmd>ene <CR>"),
       },
     },
-  },
-  mru_cwd = {
-    type = "group",
-    val = {
-      { type = "padding", val = 1 },
-      { type = "text",    val = mru_title, opts = { hl = "SpecialComment", shrink_margin = false } },
-      { type = "padding", val = 1 },
-      {
-        type = "group",
-        val = function()
-          return { mru(0, vim.fn.getcwd()) }
-        end,
-        opts = { shrink_margin = false },
+    -- note about MRU: currently this is a function,
+    -- since that means we can get a fresh mru
+    -- whenever there is a DirChanged. this is *really*
+    -- inefficient on redraws, since mru does a lot of I/O.
+    -- should probably be cached, or maybe figure out a way
+    -- to make it a reference to something mutable
+    -- and only mutate that thing on DirChanged
+    mru = {
+      type = "group",
+      val = {
+        { type = "padding", val = 1 },
+        { type = "text",    val = "MRU", opts = { hl = "SpecialComment" } },
+        { type = "padding", val = 1 },
+        {
+          type = "group",
+          val = function()
+            return { mru(10, nil, 5) }
+          end,
+        },
       },
     },
-  },
-  bottom_buttons = {
-    type = "group",
-    val = {
-      button("q", "Quit", "<cmd>q <CR>"),
+    mru_cwd = {
+      type = "group",
+      val = {
+        { type = "padding", val = 1 },
+        { type = "text",    val = mru_title, opts = { hl = "SpecialComment", shrink_margin = false } },
+        { type = "padding", val = 1 },
+        {
+          type = "group",
+          val = function()
+            return { mru(0, vim.fn.getcwd()) }
+          end,
+          opts = { shrink_margin = false },
+        },
+      },
     },
-  },
-  footer = {
-    type = "group",
-    val = {},
-  },
-}
+    bottom_buttons = {
+      type = "group",
+      val = {
+        button("Q", "Quit", "<cmd>q <CR>"),
+      },
+    },
+    footer = {
+      type = "group",
+      val = {},
+    },
+  }
 
-local config = {
-  layout = {
-    { type = "padding", val = 1 },
-    section.header,
-    { type = "padding", val = 2 },
-    section.top_buttons,
-    section.mru_cwd,
-    section.mru,
-    { type = "padding", val = 1 },
-    section.bottom_buttons,
-    section.footer,
-  },
-  opts = {
-    margin = 3,
-    redraw_on_resize = false,
-    setup = function()
-      vim.api.nvim_create_autocmd('DirChanged', {
-        pattern = '*',
-        group = "alpha_temp",
-        callback = function() require('alpha').redraw() end,
-      })
-    end,
-  },
-}
+  local config = {
+    layout = {
+      { type = "padding", val = 1 },
+      section.header,
+      { type = "padding", val = 2 },
+      section.top_buttons,
+      section.mru_cwd,
+      section.mru,
+      { type = "padding", val = 1 },
+      section.bottom_buttons,
+      section.footer,
+    },
+    opts = {
+      margin = 3,
+      redraw_on_resize = false,
+      setup = function()
+        vim.api.nvim_create_autocmd('DirChanged', {
+          pattern = '*',
+          group = "alpha_temp",
+          callback = function() require('alpha').redraw() end,
+        })
+      end,
+    },
+  }
+  -- SETUP
+  local alpha = require("alpha")
+  alpha.setup(config)
+end
 
 return {
   'goolord/alpha-nvim',
   config = function()
-    local alpha = require("alpha")
-    local alpha_term = require("alpha.term")
-    alpha.setup(config)
+    UPDATE_ALPHA()
   end,
 }

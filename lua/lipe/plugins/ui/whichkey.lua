@@ -102,12 +102,17 @@ return {
     local function _cmd(command)
       return "<cmd>" .. command .. "<cr>"
     end
+    local function update_alpha_on_keybind()
+      UPDATE_ALPHA()
+      vim.cmd("Alpha")
+    end
+
     wk.register({
       ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
       ["<leader>"] = {
 
         -- Open alpha's dashboard
-        [';'] = { _cmd("Alpha"), "Dashboard" },
+        [';'] = { update_alpha_on_keybind, "Dashboard" },
 
         -- NvimTree Toggle
         e = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },

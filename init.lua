@@ -1,4 +1,7 @@
+-- Start environment
 USR = "lipe"
+START_TIME = os.time()
+math.randomseed(START_TIME)
 
 -- Globals
 require(USR .. ".globals")

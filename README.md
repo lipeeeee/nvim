@@ -15,9 +15,11 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - npm, python and a C compiler for basic dependencies
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
+# Recomended NerdFont
+**JetBrains Mono NFM**
+
 # TODO 
 - Alpha customization
-    - fix bloat in alpha.lua
 - Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
 - custom cursor(color)
 - 80 char line
@@ -30,6 +32,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 # REFACTOR
 - Signs collection
     - Make signs library globally initialized to save a bit on processing power
+- refactor alpha.lua
 - refactor lualine.lua 
     - tables into their particular files or file in preferences/
     - better code.. etc

@@ -78,6 +78,7 @@ return {
       i = { col = colors.green, text = "INSERT" },
       v = { col = colors.purple, text = "VISUAL" },
       V = { col = colors.purple, text = "VISUAL" },
+      [""]= { col = colors.purple, text = "BISUAL"},
       c = { col = colors.yellow, text = "CMMAND" },
       R = { col = colors.red, text = "REPLAC" },
     }
