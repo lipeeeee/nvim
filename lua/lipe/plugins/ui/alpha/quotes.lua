@@ -8,7 +8,7 @@ return {
     author = "Carla"
   },
   {
-    text "GALELA",
+    text = "GALELA",
     author = "MOMO"
   }
 }

@@ -7,9 +7,7 @@ return {
   black = "#000000",
   grey = "#383838",
   yellow = "#ECBE7B",
-  d_yellow = "#fcba03",
   cyan = "#008080",
-  darkblue = "#081633",
   green = "#98be65",
   orange = "#FF8800",
   violet = "#a9a1e1",
@@ -17,4 +15,11 @@ return {
   purple = "#c678dd",
   blue = "#51afef",
   red = "#ec5f67",
+  white = "#FFFFFF",
+
+  -- Dark variants
+  dark = {
+    yellow = "#fcba03",
+    blue = "#081633",
+  }
 }

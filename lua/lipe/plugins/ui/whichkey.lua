@@ -121,7 +121,8 @@ return {
         b = {
           name = "+Buffer",
           n = { _cmd("enew"), "New File" },
-          f = { _cmd("lua vim.lsp.buf.format{async=true}"), "Format" }
+          f = { _cmd("lua vim.lsp.buf.format{async=true}"), "Format" },
+          d = { _cmd("Bdelete"), "Delete Current Buffer" },
         },
 
         -- Git

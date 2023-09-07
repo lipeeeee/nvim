@@ -150,13 +150,14 @@ end
 function UPDATE_ALPHA()
   math.randomseed(os.time())
  
+  local colors = require(USR .. ".preferences.colors")
   -- HEADER
   local selected_banner = select_random_banner()
   local default_header = {
     type = "text",
-    val = selected_banner,
+    val = selected_banner.val,
     opts = {
-      hl = "Type",
+      hl = selected_banner.col, 
       position = "center",
       shrink_margin = false,
     },

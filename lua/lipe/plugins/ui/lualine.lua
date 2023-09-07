@@ -108,7 +108,7 @@ return {
       icon = {
         pref_signs["BRANCH"],
         color = {
-          fg = colors.d_yellow
+          fg = colors.dark.yellow
         }
       },
       color = {
