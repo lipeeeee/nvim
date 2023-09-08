@@ -1,7 +1,6 @@
--- Start environment
 USR = "lipe"
-START_TIME = os.time()
-math.randomseed(START_TIME)
+START_TIME = require(USR .. ".utils").GET_CURRENT_TIME_INFO()
+math.randomseed(START_TIME.os_time)
 
 -- Globals
 require(USR .. ".globals")

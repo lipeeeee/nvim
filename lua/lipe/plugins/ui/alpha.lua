@@ -3,6 +3,8 @@ local fnamemodify = vim.fn.fnamemodify
 local filereadable = vim.fn.filereadable
 local leader = "SPC"
 
+local orientation = "center"
+
 local default_mru_ignore = { "gitcommit" }
 local mru_opts = {
   ignore = function(path, ext)
@@ -149,23 +151,44 @@ end
 -- Builds updated config & sets up
 function UPDATE_ALPHA()
   math.randomseed(os.time())
- 
-  local colors = require(USR .. ".preferences.colors")
+  local dateInfo = require(USR .. ".utils").GET_CURRENT_TIME_INFO()
+
   -- HEADER
   local selected_banner = select_random_banner()
   local default_header = {
     type = "text",
     val = selected_banner.val,
     opts = {
-      hl = selected_banner.col, 
-      position = "center",
+      hl = selected_banner.col,
+      position = orientation,
       shrink_margin = false,
     },
   }
   local section = {
+    info = {
+      type = "group",
+      val = {
+        {
+          type = "text",
+          val = dateInfo.date,
+          opts = {
+            hl = selected_banner.col,
+            position = orientation,
+          }
+        },
+        {
+          type = "text",
+          val = dateInfo.hour,
+          opts = {
+            hl = selected_banner.col,
+            position = orientation,
+          }
+        }
+      },
+    },
+
     -- Header/Image for dashboard
     header = default_header,
-
     --
     top_buttons = {
       type = "group",
@@ -225,6 +248,7 @@ function UPDATE_ALPHA()
     layout = {
       { type = "padding", val = 1 },
       section.header,
+      section.info,
       { type = "padding", val = 2 },
       section.top_buttons,
       section.mru_cwd,
@@ -245,6 +269,7 @@ function UPDATE_ALPHA()
       end,
     },
   }
+
   -- SETUP
   local alpha = require("alpha")
   alpha.setup(config)

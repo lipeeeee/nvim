@@ -23,7 +23,6 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 - Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
 - custom cursor(color)
 - 80 char line
-- Install script for chmod stuff when running sh scripts
 - Improve aesthetics of current config maybe check r/unixporn
     - colorscheme check tokyonight from folke
     - toggleterm dividers, maybe smth with win*?
