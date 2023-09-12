@@ -78,6 +78,7 @@ return {
     Watches = "󰂥",
     DebugConsole = "",
     Calendar = "",
+    Clock = "",
     Check = "",
     ChevronRight = "",
     ChevronShortDown = "",
@@ -156,6 +157,8 @@ return {
     Smiley = "",
     Package = "",
     CircuitBoard = "",
+    Vim = "",
   },
+
   BRANCH = "",
 }

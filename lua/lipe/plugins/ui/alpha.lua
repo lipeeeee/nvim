@@ -19,7 +19,11 @@ local function select_random_banner()
   return all_headers[math.random(#all_headers)]
 end
 
---- @param sc string
+local function select_random_quote()
+  local all_quotes = require(USR .. ".plugins.ui.alpha.quotes")
+  return all_quotes[math.random(#all_quotes)]
+end
+
 --- @param txt string
 --- @param keybind string? optional
 --- @param keybind_opts table? optional
@@ -151,6 +155,7 @@ end
 -- Builds updated config & sets up
 function UPDATE_ALPHA()
   math.randomseed(os.time())
+  local pref_signs = require(USR .. ".preferences.signs")
   local dateInfo = require(USR .. ".utils").GET_CURRENT_TIME_INFO()
 
   -- HEADER
@@ -164,13 +169,22 @@ function UPDATE_ALPHA()
       shrink_margin = false,
     },
   }
+
+  local selected_quote = select_random_quote()
+  local date_and_time = pref_signs.ui.Clock .. " " .. dateInfo.date .. "   " .. pref_signs.ui.Calendar .. " " .. dateInfo.hour
+  local lazy_obj = require("lazy")
+  local version = vim.version()
+  local nvim_version_info = pref_signs.misc.Vim .. " v" .. version.major .. "." .. version.minor .. "." .. version.patch
+
+  local plugins_and_startup = pref_signs.misc.Package .. " " .. #lazy_obj.plugins() .. " plugins " .. nvim_version_info  
   local section = {
+    -- Info below banner
     info = {
       type = "group",
       val = {
         {
           type = "text",
-          val = dateInfo.date,
+          val = date_and_time,
           opts = {
             hl = selected_banner.col,
             position = orientation,
@@ -178,10 +192,33 @@ function UPDATE_ALPHA()
         },
         {
           type = "text",
-          val = dateInfo.hour,
+          val = plugins_and_startup,
           opts = {
             hl = selected_banner.col,
             position = orientation,
+          }
+        },
+       },
+    },
+
+    -- Quote
+    quote = {
+      type = "group",
+      val = {
+        {
+          type = "text",
+          val = selected_quote.text,
+          opts = {
+            hl = "Keyword",
+            position = "right",
+          }
+        },
+        {
+          type = "text",
+          val = selected_quote.author,
+          opts = {
+            hl = "Keyword",
+            position = "right",
           }
         }
       },
@@ -189,7 +226,6 @@ function UPDATE_ALPHA()
 
     -- Header/Image for dashboard
     header = default_header,
-    --
     top_buttons = {
       type = "group",
       val = {
@@ -226,7 +262,7 @@ function UPDATE_ALPHA()
         {
           type = "group",
           val = function()
-            return { mru(0, vim.fn.getcwd()) }
+            return { mru(0, vim.fn.getcwd(), 5) }
           end,
           opts = { shrink_margin = false },
         },
@@ -249,10 +285,11 @@ function UPDATE_ALPHA()
       { type = "padding", val = 1 },
       section.header,
       section.info,
+      -- section.quote,
       { type = "padding", val = 2 },
       section.top_buttons,
       section.mru_cwd,
-      section.mru,
+      -- section.mru,
       { type = "padding", val = 1 },
       section.bottom_buttons,
       section.footer,

@@ -20,6 +20,7 @@ mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
 
 # TODO 
 - Alpha customization
+- Fix CD in nvimtree
 - Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
 - custom cursor(color)
 - 80 char line
