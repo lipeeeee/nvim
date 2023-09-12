@@ -175,7 +175,7 @@ function UPDATE_ALPHA()
   local lazy_obj = require("lazy")
   local version = vim.version()
   local nvim_version_info = pref_signs.misc.Vim .. " v" .. version.major .. "." .. version.minor .. "." .. version.patch
-
+  -- require("lazy").stats().startuptime
   local plugins_and_startup = pref_signs.misc.Package .. " " .. #lazy_obj.plugins() .. " plugins " .. nvim_version_info  
   local section = {
     -- Info below banner
