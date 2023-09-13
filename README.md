@@ -11,9 +11,12 @@ mv ~/.config/nvim ~/.config/nvim_old
 rm -rf ~/.local/share/nvim
 
 # Clone repo
-git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1
 # OR
-git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1 && nvim
+git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1
+
+# Oper
+nvim
 ```
 
 # Dependencies
