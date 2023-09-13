@@ -4,7 +4,7 @@ Vim to Neovim migration, personal nvim cfg
 # Linux Instalation
 ```bash
 git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
-or(with ssh)
+# or(with ssh)
 git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1 && nvim
 ```
 
