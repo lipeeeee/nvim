@@ -1,19 +1,23 @@
-# .nvim
+# NeoVim config
 Vim to Neovim migration, personal nvim cfg
 
-# Linux Instalation
+# Installation
+# Linux
 ```bash
+# Backup current config
+mv ~/.config/nvim ~/.config/nvim_old
+
+# Remove plugin cache files
+rm -rf ~/.local/share/nvim
+
+# Clone repo
 git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1 && nvim
-# or(with ssh)
+# OR
 git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1 && nvim
 ```
 
-## Removing config cache files
-```bash
-mv ~/.config/nvim ~/.config/nvim_old && rm -rf ~/.local/share/nvim
-```
-
 # Dependencies
+- 0.9.2 nvim
 - npm, python and a C compiler for basic dependencies
 - Lazy loading moves files around so might need admin/root privileges **(probably not)**
 
