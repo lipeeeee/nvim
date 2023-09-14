@@ -1,3 +1,4 @@
+-- This file works as "kernel" of config
 -- Initialize config environment
 local function init_environment()
   -- Save start time
@@ -40,7 +41,8 @@ end
 
 -- Post plugin processing
 local function post_plugin_processing()
-
+  -- Colorscheme
+  require("lipe.preferences.colorscheme")
 end
 
 init_environment()
