@@ -1,33 +1,48 @@
-USR = "lipe"
-START_TIME = require(USR .. ".utils").GET_CURRENT_TIME_INFO()
-math.randomseed(START_TIME.os_time)
+-- Initialize config environment
+local function init_environment()
+  -- Save start time
+  NVIM_START_TIME = require("lipe.utils.time").get_current_time_info()
 
--- Globals
-require(USR .. ".globals")
+  -- Initialize globals
+  require("lipe.globals")
 
--- Preferences
-require(USR .. ".preferences")
+  -- Options
+	require("lipe.preferences.options")
 
--- Plugins
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+  -- Keymaps
+  require("lipe.preferences.keymaps")
 end
-vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-  { import = USR .. ".plugins.core" },
-  { import = USR .. ".plugins.lsp" },
-  { import = USR .. ".plugins.ui" }
-})
 
--- After plugin setup..
--- Set colorscheme, & keymaps(requires which-key)
-require(USR .. ".preferences.colorscheme")
-require(USR .. ".preferences.keymaps")
+-- Attatch lazy.nvim package manager to nvim
+local function bootstrap_lazy()
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+      "git",
+      "clone",
+      "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable", -- latest stable release
+      lazypath,
+    })
+  end
+  vim.opt.rtp:prepend(lazypath)
+
+  -- Where to look for plugins
+  local plugin_source = {
+    { import = "lipe.plugins.core" },
+    { import = "lipe.plugins.lsp" },
+    { import = "lipe.plugins.ui" },
+  }
+
+  require("lazy").setup(plugin_source)
+end
+
+-- Post plugin processing
+local function post_plugin_processing()
+
+end
+
+init_environment()
+bootstrap_lazy()
+post_plugin_processing()
