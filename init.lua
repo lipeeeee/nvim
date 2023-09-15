@@ -8,7 +8,10 @@ local function init_environment()
   require("lipe.globals")
 
   -- Options
-	require("lipe.preferences.options")
+  require("lipe.preferences.options")
+
+  -- AutoExec 
+  require("lipe.preferences.autoexec")
 
   -- Keymaps
   require("lipe.preferences.keymaps")
