@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  lazy = false,
+  lazy = false, -- Probably cant lazy load this
   config = function()
     local nvim_tree = require("nvim-tree")
 

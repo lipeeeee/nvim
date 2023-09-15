@@ -124,22 +124,14 @@ return {
 
       -- 🔭 Extensions
       -- https://github.com/nvim-telescope/telescope-file-browser.nvim
-      -- telescope.load_extension "file_browser"
+      telescope.load_extension "file_browser"
 
       -- https://github.com/nvim-telescope/telescope-ui-select.nvim
-      -- telescope.load_extension "ui-select"
-
-      -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
-      -- <space>b
-      -- telescope.load_extension "bookmarks"
-
-      -- https://github.com/cljoly/telescope-repo.nvim
-      -- <leader>rl
-      -- telescope.load_extension "repo"
+      telescope.load_extension "ui-select"
 
       -- https://github.com/AckslD/nvim-neoclip.lua
       -- <C-n>
-      -- telescope.load_extension "neoclip"
+      telescope.load_extension "neoclip"
 
       -- GitHub CLI → local version
       -- telescope.load_extension "gh"
@@ -147,14 +139,11 @@ return {
   },
 
   -- Extensions
-  -- { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
-  -- { "nvim-telescope/telescope-ui-select.nvim",    lazy = true },
-  -- { "dhruvmanila/telescope-bookmarks.nvim",       lazy = true },
-  -- { "nvim-telescope/telescope-github.nvim",       lazy = true },
-  -- {
-  --   "AckslD/nvim-neoclip.lua",
-  --   config = function() require("neoclip").setup() end,
-  --   lazy = true
-  -- },
-  -- { "cljoly/telescope-repo.nvim", lazy = true },
+  { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
+  { "nvim-telescope/telescope-ui-select.nvim",    lazy = true },
+  {
+    "AckslD/nvim-neoclip.lua",
+    config = function() require("neoclip").setup() end,
+    lazy = true
+  },
 }
