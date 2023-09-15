@@ -23,7 +23,7 @@ M.setup = function()
     vim.fn.sign_define(sign.name, { 
       texthl = sign.name,
       text = sign.text,
-      numhl = "" 
+      numhl = ""
     })
   end
 

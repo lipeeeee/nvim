@@ -19,6 +19,9 @@ return {
     end,
   },
   {
+    "neovim/nvim-lspconfig" 
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     -- dependencies = {
     --   "rafamadriz/friendly-snippets",
@@ -58,5 +61,5 @@ return {
 
       handlers.setup()
     end,
-  }
+  },
 }
