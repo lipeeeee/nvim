@@ -2,7 +2,6 @@ return {
   { 
     "catppuccin/nvim",
     name = "catppuccin", 
-    priority = 1000,
     
     opts = {
       no_italic = true,
@@ -15,4 +14,18 @@ return {
       },
     },
   },
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    config = function()
+      local kanagawa = require("kanagawa")
+      local opts = {
+        commentStyle = { italic = false },
+      }
+
+      kanagawa.setup(opts)
+    end,
+  },
+  { "shaunsingh/oxocarbon.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
 }
