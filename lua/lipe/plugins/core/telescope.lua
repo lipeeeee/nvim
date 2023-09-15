@@ -1,8 +1,19 @@
+-- Optional dependencies
+-- sharkdp/fd (finder)
+-- nvim-treesitter/nvim-treesitter (finder/preview)
+-- neovim LSP (picker)
+-- devicons (icons)
 return {
   {
     "nvim-telescope/telescope.nvim",
+    -- Load on Telescope command
+    cmd = "Telescope",
     tag = '0.1.3',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "BurntSushi/ripgrep",
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
     config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")

@@ -1,9 +1,4 @@
 COLORS = {
-  lualine = {
-    bg = "#202328",
-    fg = "#bbc2cf",
-  },
-
   black = "#000000",
   grey = "#383838",
   yellow = "#ECBE7B",
@@ -21,5 +16,11 @@ COLORS = {
   dark = {
     yellow = "#fcba03",
     blue = "#081633",
-  }
+  },
+
+  -- Lualine specific
+  lualine = {
+    bg = "#202328",
+    fg = "#bbc2cf",
+  },
 }
