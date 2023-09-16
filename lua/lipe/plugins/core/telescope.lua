@@ -10,9 +10,16 @@ return {
     cmd = "Telescope",
     tag = '0.1.3',
     dependencies = {
+      {
+        "AckslD/nvim-neoclip.lua",
+        config = function() require("neoclip").setup() end,
+      },
+      { "nvim-telescope/telescope-fzf-native.nvim", build="make" },
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
       "nvim-lua/plenary.nvim",
       "BurntSushi/ripgrep",
-      "nvim-telescope/telescope-fzf-native.nvim",
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
       local telescope = require("telescope")
@@ -123,6 +130,9 @@ return {
       }
 
       -- 🔭 Extensions
+      -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+      -- telescope.load_extension "fzf"
+
       -- https://github.com/nvim-telescope/telescope-file-browser.nvim
       telescope.load_extension "file_browser"
 
@@ -139,11 +149,4 @@ return {
   },
 
   -- Extensions
-  { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
-  { "nvim-telescope/telescope-ui-select.nvim",    lazy = true },
-  {
-    "AckslD/nvim-neoclip.lua",
-    config = function() require("neoclip").setup() end,
-    lazy = true
-  },
 }

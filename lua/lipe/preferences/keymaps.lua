@@ -11,16 +11,8 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Paste mode toggle TODO, not working
-local function toggle_paste_command()
-  if (vim.cmd("set paste?") == "nopaste") then
-    vim.cmd("set paste") 
-  else
-    vim.cmd("set nopaste")
-  end
-  return ""
-end
-keymap("n", "<C-p>", toggle_paste_command(),{})
+-- Fuck Q
+keymap("n", "Q", "<Nop>", opts)
 
 -- Modes
 --   normal_mode = "n",

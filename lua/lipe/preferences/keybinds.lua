@@ -9,16 +9,15 @@ local function update_alpha_on_keybind()
  -- vim.cmd("Alpha")
 end
 
-
 -- abcdefghijklmnopqrstuvxyz
 return {
   ["<leader>"] = {
     -- NvimTree
     ["e"] = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
-    
+
     -- Lazy
     ["L"] = { _cmd("Lazy"), "Lazy" },
-    
+
     -- Telescope
     t = {
       name = "+Telescope",
