@@ -1,5 +1,4 @@
 -- Mapping of keybinds
-
 local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
 end

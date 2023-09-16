@@ -5,8 +5,8 @@ local time_format = "%H:%M:%S"
 local function get_current_time_info()
   return {
     os_time = os.time(),
-    date = os.date("%d-%m-%Y"),
-    time = os.date("%H:%M:%S")
+    date = os.date(date_format),
+    time = os.date(time_format),
   }
 end
 
