@@ -1,5 +1,9 @@
-# NeoVim config
-Vim to Neovim migration, personal nvim cfg
+# KICKSTART NVIM config
+Personal nvim kickstart config for when making new nvim configs
+
+- Sane defaults, does not feel bloated and has the essentials while having the vim "snappiness"
+
+- Designed and optimized to be scalable from start.
 
 # Installation
 ## Linux
@@ -11,15 +15,13 @@ mv ~/.config/nvim ~/.config/nvim_old
 rm -rf ~/.local/share/nvim
 
 # Clone repo
-git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1
+git clone --branch kickstart https://github.com/lipeeeee/nvim ~/.config/nvim --depth 1
+ 
 # OR
-git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1
+git clone --branch kickstart git@github.com/lipeeeee/nvim ~/.config/nvim --depth 1
 
 # Open
 nvim
 ```
 
-# Dependencies
-- 0.9.2 nvim
-- npm, python and a C compiler for basic dependencies
 
