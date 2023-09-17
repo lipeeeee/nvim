@@ -3,5 +3,5 @@ local colorscheme = "kanagawa-dragon"
 
 local colorscheme_exists, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not colorscheme_exists then
-    vim.notify("colorscheme " .. colorscheme .. " not found!")
+  vim.notify("colorscheme " .. colorscheme .. " not found!")
 end

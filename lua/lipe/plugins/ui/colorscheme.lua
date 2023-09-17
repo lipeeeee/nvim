@@ -1,8 +1,8 @@
 return {
-  { 
+  {
     "catppuccin/nvim",
-    name = "catppuccin", 
-    
+    name = "catppuccin",
+
     opts = {
       no_italic = true,
       color_overrides = {

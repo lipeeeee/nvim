@@ -11,7 +11,7 @@ local function get_current_time_info()
 end
 
 return {
-	date_format = date_format,
-	time_format = time_format,
-	get_current_time_info = get_current_time_info,
+  date_format = date_format,
+  time_format = time_format,
+  get_current_time_info = get_current_time_info,
 }

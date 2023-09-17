@@ -98,7 +98,7 @@ return {
       },
     }
     wk.setup(opts)
-    
+
     -- Register keybinds
     wk.register(require("lipe.preferences.keybinds"))
   end

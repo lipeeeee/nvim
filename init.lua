@@ -10,7 +10,7 @@ local function init_environment()
   -- Options
   require("lipe.preferences.options")
 
-  -- AutoExec 
+  -- AutoExec
   require("lipe.preferences.autoexec")
 
   -- Keymaps

@@ -31,7 +31,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Splitting window
 keymap("n", "<A-v>", ":vsp<CR>", opts) -- Virtual split current window
-keymap("n", "<A-h>", ":sp<CR>", opts) -- Horizontal split current window
+keymap("n", "<A-h>", ":sp<CR>", opts)  -- Horizontal split current window
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -66,4 +66,3 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-

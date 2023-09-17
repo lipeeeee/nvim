@@ -3,14 +3,15 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = true, -- mason-lspconfig will load this
   },
   {
     "williamboman/mason.nvim",
+    lazy = true, -- mason-lspconfig will load this
     config = function()
       local mason = require("mason")
 
-      -- mason setup
-      local opts = {
+      mason.setup({
         ui = {
           icons = {
             package_installed = ICONS.ui.Check,
@@ -18,8 +19,7 @@ return {
             package_uninstalled = ICONS.ui.Close
           }
         },
-      }
-      mason.setup(opts)
+      })
     end,
   },
   {

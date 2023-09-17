@@ -134,9 +134,9 @@ ICONS = {
 
   diagnostics = {
     BoldError = "",
-    Error = "E", -- "",
+    Error = "E",       -- "",
     BoldWarning = "",
-    Warning = "W", -- "",
+    Warning = "W",     -- "",
     BoldInformation = "",
     Information = "I", -- "",
     BoldQuestion = "",

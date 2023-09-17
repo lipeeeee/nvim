@@ -2,7 +2,7 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    version = "2.*",
     lazy = true, -- nvim-cmp will load luasnip
     dependencies = {
       "rafamadriz/friendly-snippets",
@@ -10,30 +10,30 @@ return {
     config = function()
       require("luasnip/loaders/from_vscode").lazy_load()
     end,
-    build = "make install_jsregexp",
+    build = "make install_jsregexp", -- Optional
   },
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "L3MON4D3/LuaSnip", -- Load snippet engine
+      "L3MON4D3/LuaSnip",         -- Snippet engine
       "saadparwaiz1/cmp_luasnip", -- Snippet completion
-      "hrsh7th/cmp-buffer", -- Buffer completion
-      "hrsh7th/cmp-path", -- Path completion
-      "windwp/nvim-autopairs", -- Autopair
-      "hrsh7th/cmp-nvim-lsp", -- LSP Autocomp
-      "onsails/lspkind.nvim",
+      "hrsh7th/cmp-buffer",       -- Buffer completion
+      "hrsh7th/cmp-path",         -- Path completion
+      "windwp/nvim-autopairs",    -- Autopair
+      "hrsh7th/cmp-nvim-lsp",     -- LSP completion
+      "onsails/lspkind.nvim",     -- LSP completion formatter
     },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
+      -- Utility function to check backspace in "magic tab snippet"
       local check_backspace = function()
         local col = vim.fn.col "." - 1
         return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
       end
 
-      -- find more here: https://www.nerdfonts.com/cheat-sheet
       cmp.setup {
         snippet = {
           expand = function(args)

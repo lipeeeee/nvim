@@ -7,7 +7,7 @@ return {
   config = function()
     local nvim_tree = require("nvim-tree")
 
-		-- Capabilities
+    -- Capabilities
     local function on_attach(bufnr)
       local api = require "nvim-tree.api"
 
@@ -23,7 +23,7 @@ return {
       vim.keymap.set("n", "C", api.tree.change_root_to_node, opts "CD")
     end
 
-		-- Setup nvim-tree
+    -- Setup nvim-tree
     nvim_tree.setup {
       auto_reload_on_write = false,
       disable_netrw = false,

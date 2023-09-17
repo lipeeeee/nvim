@@ -2,6 +2,7 @@ local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
+  vim.notify("Could not find completion engine for LSP")
   return
 end
 
@@ -20,7 +21,7 @@ M.setup = function()
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { 
+    vim.fn.sign_define(sign.name, {
       texthl = sign.name,
       text = sign.text,
       numhl = ""

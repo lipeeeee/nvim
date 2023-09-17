@@ -14,7 +14,7 @@ return {
         "AckslD/nvim-neoclip.lua",
         config = function() require("neoclip").setup() end,
       },
-      { "nvim-telescope/telescope-fzf-native.nvim", build="make" },
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       "nvim-lua/plenary.nvim",

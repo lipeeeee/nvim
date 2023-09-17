@@ -1,14 +1,14 @@
 return {
   "RRethy/vim-illuminate",
-  event = "BufEnter",
-  config = function ()
+  event = "VeryLazy",
+  config = function()
     local illuminate = require("illuminate")
 
     illuminate.configure({
       providers = {
-          'lsp',
-          'treesitter',
-          'regex',
+        'lsp',
+        'treesitter',
+        'regex',
       },
       -- delay: delay in milliseconds
       delay = 100,
