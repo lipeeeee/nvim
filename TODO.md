@@ -1,9 +1,17 @@
-# PLUGINS
 theprimeagen remaps & other
+custom commands like :Update
 lsp (research what's needed, find null-ls alternatives)
     - Refactor lipe.plugins.lsp.*
 UNDOTREE
-disable commandline history
+(probably done) - disable commandline history
+change cmd bvackcolor - PMenu (after choosing colorscheme)
+THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
+BARBACUE
+HOP
+
+CUSTOM CURSOR COLOR
+
+TJ video
 
 see folke
 conform.nvim, see author
@@ -31,9 +39,7 @@ zen-mode
 
 # POSTPONED
 - Function to dinamically change colorscheme without having to go to config files
-- spotify-tui integration with neovim (there is like a milion dependencies, not even worth it)
-- lualine flag for paste mode 
-- TSInstall init fn() check trouble or smth for required
+- spotify-tui integration with neovim (there is like a milion dependencies, not even worth it) lualine flag for paste mode TSInstall init fn() check trouble or smth for required
 - improvement: ExitPre event can be used to close toggleterm process 
 - Very later on: make metrics python script
 

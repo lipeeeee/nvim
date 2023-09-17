@@ -8,7 +8,6 @@ return {
       "rafamadriz/friendly-snippets",
     },
     config = function()
-      local luasnip = require("luasnip")
       require("luasnip/loaders/from_vscode").lazy_load()
     end,
     build = "make install_jsregexp",
@@ -22,6 +21,7 @@ return {
       "hrsh7th/cmp-buffer", -- Buffer completion
       "hrsh7th/cmp-path", -- Path completion
       "windwp/nvim-autopairs", -- Autopair
+      "hrsh7th/cmp-nvim-lsp", -- LSP Autocomp
       "onsails/lspkind.nvim",
     },
     config = function()
