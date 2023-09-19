@@ -139,7 +139,7 @@ return {
         },
         icons = {
           hint = ICONS.diagnostics.Hint,
-          info = ICONS.diagnostics.Info,
+          info = ICONS.diagnostics.Information,
           warning = ICONS.diagnostics.Warning,
           error = ICONS.diagnostics.Error,
         },

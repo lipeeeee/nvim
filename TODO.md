@@ -1,3 +1,5 @@
+FIX TREE SITTER DUMB ITALIC SHIT
+ADD TREESITTER TO KICKSTART WITH FIXER
 theprimeagen remaps & other
 custom commands like :Update
 lsp (research what's needed, find null-ls alternatives)
@@ -9,13 +11,20 @@ THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
 BARBACUE
 HOP
 
-CUSTOM CURSOR COLOR
-
 TJ video
 
 see folke
 conform.nvim, see author
 zen-mode
+
+
+:Update
+- MasonUpdate
+- TSUpdate
+- UpdateRemotePlugins
+
+:Reload
+- LspRestart
 
 ------------------------ FROM MASTER
 # TODO 
