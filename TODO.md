@@ -1,5 +1,5 @@
-FIX TREE SITTER DUMB ITALIC SHIT
 ADD TREESITTER TO KICKSTART WITH FIXER
+MAKE BETTER MAPPINGS FOR TREESITTER AND LSP HANDLERS
 theprimeagen remaps & other
 custom commands like :Update
 lsp (research what's needed, find null-ls alternatives)
