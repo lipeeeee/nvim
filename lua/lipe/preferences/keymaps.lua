@@ -14,6 +14,9 @@ vim.g.maplocalleader = " "
 -- Fuck Q
 keymap("n", "Q", "<Nop>", opts)
 
+-- Quick macro
+keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",

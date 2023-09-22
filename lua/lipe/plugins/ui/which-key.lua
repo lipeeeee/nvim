@@ -100,6 +100,6 @@ return {
     wk.setup(opts)
 
     -- Register keybinds
-    wk.register(require("lipe.preferences.keybinds"))
+    wk.register(require("lipe.preferences.keybinds").general)
   end
 }
