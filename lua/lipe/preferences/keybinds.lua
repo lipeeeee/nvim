@@ -1,6 +1,4 @@
 -- Mapping of keybinds
-local keymap = vim.api.nvim_buf_set_keymap
-
 local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
 end
@@ -15,6 +13,18 @@ return {
   ["<leader>"] = {
     -- NvimTree
     ["e"] = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
+
+    -- LSP
+    ["l"] = {
+      name = "+LSP",
+      ["f"] = { _cmd("lua vim.lsp.buf.format{ async = true }"), "Format" },
+      ["i"] = { _cmd("LspInfo"), "Info" },
+      ["a"] = { _cmd("lua vim.lsp.buf.code_action()"), "Code Actions" },
+      ["n"] = { _cmd("lua vim.diagnostic.goto_next({buffer=, opts0})"), "Diagnostics Next" },
+      ["p"] = { _cmd("lua vim.diagnostic.goto_prev({buffer=, opts0})"), "Diagnostics Prev" },
+      ["s"] = { _cmd("lua vim.lsp.buf.signature_help()"), "Signature Help" },
+      ["q"] = { _cmd("lua vim.diagnostic.setloclist()"), "Loc List" },
+    },
 
     -- Lazy
     ["L"] = { _cmd("Lazy"), "Lazy" },
@@ -68,5 +78,13 @@ return {
     --
     --    -- Lazy
     --    L = { _cmd("Lazy"), "Lazy" }
+
   },
+  -- Non-Leader lsp bindings
+  ["<C-space>"] = { _cmd("lua vim.lsp.buf.hover()"), "Lsp Hover Info" },
+  ["gd"] = { _cmd("lua vim.lsp.buf.definition()"), "Go Definition" },
+  ["gD"] = { _cmd("lua vim.lsp.buf.declaration()"), "Go Declaration" },
+  ["gI"] = { _cmd("lua vim.lsp.buf.implementation()"), "Go Implementation" },
+  ["gr"] = { _cmd("lua vim.lsp.buf.references()"), "Go References" },
+  -- ["gl"] = { _cmd("lua vim.diagnostic.open_float()"), "Go Diagnostics???" },
 }

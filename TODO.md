@@ -1,6 +1,3 @@
-REFACTOR THE WAY KEYMAPS ARE SET(MUST BE IN THE SAME FILE/DIRECTORY)
-
-MAKE BETTER MAPPINGS FOR TREESITTER AND LSP HANDLERS
 theprimeagen remaps & other
 custom commands like :Update
 lsp (research what's needed, find null-ls alternatives)
