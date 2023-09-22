@@ -57,17 +57,29 @@ M.setup = function()
   })
 end
 
+local opts = { noremap = true, silent = true }
+local lsp_keymaps = {
+  -- Mode, Keybind, command
+  { "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts },
+  { "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts },
+  { "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts },
+  { "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts },
+  { "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts },
+  { "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts },
+  { "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts },
+  { "n", "<leader>li", "<cmd>LspInfo<cr>", opts },
+  { "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts },
+  { "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts },
+  { "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts },
+  { "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts },
+  { "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts },
+  { "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts },
+  { "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts },
+}
+
 M.on_attach = function(client, bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
-  -- if client.name == "tsserver" then
-  -- 	client.server_capabilities.documentFormattingProvider = false
-  -- end
-  --
-  -- if client.name == "sumneko_lua" then
-  -- 	client.server_capabilities.documentFormattingProvider = false
-  -- end
 
-  local lsp_keymaps = require("lipe.preferences.keybinds").lsp_keymaps
   for _, element in pairs(lsp_keymaps) do
     -- "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts
     keymap(bufnr, element[1], element[2], element[3], element[4])
