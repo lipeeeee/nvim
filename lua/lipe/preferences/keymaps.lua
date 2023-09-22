@@ -11,12 +11,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Fuck Q
-keymap("n", "Q", "<Nop>", opts)
-
--- Quick macro
-keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -26,6 +20,12 @@ keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
 --   command_mode = "c",
 
 -- Normal --
+-- Fuck Q
+keymap("n", "Q", "<Nop>", opts)
+
+-- Quick macro
+keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

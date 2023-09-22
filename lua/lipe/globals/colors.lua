@@ -1,26 +1,24 @@
 COLORS = {
-  black = "#000000",
-  grey = "#383838",
-  yellow = "#ECBE7B",
-  cyan = "#008080",
-  green = "#98be65",
-  orange = "#FF8800",
-  violet = "#a9a1e1",
-  magenta = "#c678dd",
-  purple = "#c678dd",
-  blue = "#51afef",
-  red = "#ec5f67",
-  white = "#FFFFFF",
+  -- Basic colors
+  BLACK = "#000000",
+  GREY = "#383838",
+  CYAN = "#008080",
+  GREEN = "#98be65",
+  ORANGE = "#FF8800",
+  VIOLET = "#a9a1e1",
+  MAGENTA = "#c678dd",
+  PURPLE = "#c678dd",
+  BLUE = "#51afef",
+  RED = "#ec5f67",
+  WHITE = "#FFFFFF",
 
   -- Dark variants
-  dark = {
-    yellow = "#fcba03",
-    blue = "#081633",
-  },
+  DARK_YELLOW = "#fcba03",
+  DARK_BLUE = "#081633",
 
   -- Lualine specific
-  lualine = {
-    bg = "#202328",
-    fg = "#bbc2cf",
+  LUALINE = {
+    BG = "#202328",
+    FG = "#bbc2cf",
   },
 }

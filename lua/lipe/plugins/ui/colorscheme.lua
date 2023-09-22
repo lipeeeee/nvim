@@ -7,9 +7,9 @@ return {
       no_italic = true,
       color_overrides = {
         mocha = {
-          base = COLORS.black,
-          mantle = COLORS.black,
-          crust = COLORS.black,
+          base = COLORS.BLACK,
+          mantle = COLORS.BLACK,
+          crust = COLORS.BLACK,
         },
       },
     },
@@ -19,11 +19,10 @@ return {
     priority = 1000,
     config = function()
       local kanagawa = require("kanagawa")
-      local opts = {
-        commentStyle = { italic = false },
-      }
 
-      kanagawa.setup(opts)
+      kanagawa.setup({
+        commentStyle = { italic = false },
+      })
     end,
   },
   { "shaunsingh/oxocarbon.nvim" },

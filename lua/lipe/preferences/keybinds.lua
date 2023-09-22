@@ -18,6 +18,7 @@ return {
     ["l"] = {
       name = "+LSP",
       ["f"] = { _cmd("lua vim.lsp.buf.format{ async = true }"), "Format" },
+      ["r"] = { _cmd("lua vim.lsp.buf.rename()"), "Rename" },
       ["i"] = { _cmd("LspInfo"), "Info" },
       ["a"] = { _cmd("lua vim.lsp.buf.code_action()"), "Code Actions" },
       ["n"] = { _cmd("lua vim.diagnostic.goto_next({buffer=, opts0})"), "Diagnostics Next" },

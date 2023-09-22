@@ -1,3 +1,3 @@
--- Manager for globals
+-- Initializer for globals
 require("lipe.globals.colors")
 require("lipe.globals.icons")

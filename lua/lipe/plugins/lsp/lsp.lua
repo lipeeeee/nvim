@@ -1,5 +1,5 @@
 -- Handles config for core lsp packages:
--- mason, mason-lspconfig, nvim-lspconfig
+-- nvim-lspconfig, mason, mason-lspconfig 
 return {
   {
     "neovim/nvim-lspconfig",
@@ -34,15 +34,14 @@ return {
 
       -- mason-lspconfig Setup
       local ensure_installed = require("lipe.lsp.servers")
-      local opts = {
+      mason_lspconfig.setup({
         ensure_installed = ensure_installed,
         automatic_installation = true,
-      }
-      mason_lspconfig.setup(opts)
+      })
 
       -- Handlers & server options
       local handlers = require("lipe.lsp.handlers")
-      opts = {
+      local opts = {
         on_attach = handlers.on_attach,
         capabilities = handlers.capabilities
       }
