@@ -49,6 +49,8 @@ return {
       c = { _cmd("Telescope neoclip"), "Clipboard" },
       g = { _cmd("Telescope live_grep"), "Grep" }
     },
+
+    ["U"] = { _cmd("UndotreeToggle"), "Undotree" },
     --  ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
     --  ["<leader>"] = {
     --    -- Open alpha's dashboard
