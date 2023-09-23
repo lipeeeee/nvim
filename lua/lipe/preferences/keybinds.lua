@@ -1,3 +1,6 @@
+local harpoon_mark = require("harpoon.mark")
+local harpoon_ui = require("harpoon.ui")
+
 -- Mapping of keybinds
 local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
@@ -13,6 +16,13 @@ return {
   ["<leader>"] = {
     -- NvimTree
     ["e"] = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
+
+    -- Harpoon
+    ["h"] = {
+      name = "+Harpoon",
+      ["a"] = { harpoon_mark.add_file, "Add file" },
+      ["e"] = { harpoon_ui.toggle_quick_menu, "Menu" },
+    },
 
     -- LSP
     ["l"] = {
@@ -87,5 +97,11 @@ return {
   ["gD"] = { _cmd("lua vim.lsp.buf.declaration()"), "Go Declaration" },
   ["gI"] = { _cmd("lua vim.lsp.buf.implementation()"), "Go Implementation" },
   ["gr"] = { _cmd("lua vim.lsp.buf.references()"), "Go References" },
-  -- ["gl"] = { _cmd("lua vim.diagnostic.open_float()"), "Go Diagnostics???" },
+  -- ["gl"] = { _cmd("lua vim.diagnostic.open_float()"), "Go Diagnostics" },
+
+  -- Harpoon
+  ["<A-1>"] = { function() harpoon_ui.nav_file(1) end, "Harpoon file 1" },
+  ["<A-2>"] = { function() harpoon_ui.nav_file(2) end, "Harpoon file 2" },
+  ["<A-3>"] = { function() harpoon_ui.nav_file(3) end, "Harpoon file 3" },
+  ["<A-4>"] = { function() harpoon_ui.nav_file(4) end, "Harpoon file 4" },
 }

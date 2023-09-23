@@ -1,20 +1,16 @@
 theprimeagen remaps & other
-custom commands like :Update
+TJ video
 lsp (research what's needed, find null-ls alternatives)
-    - Refactor lipe.plugins.lsp.*
 UNDOTREE
-(probably done) - disable commandline history
+disable commandline history
 change cmd bvackcolor - PMenu (after choosing colorscheme)
 THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
 BARBACUE
 HOP
 
-TJ video
-
 see folke
 conform.nvim, see author
 zen-mode
-
 
 :Update
 - MasonUpdate
