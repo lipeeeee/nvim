@@ -26,6 +26,13 @@ keymap("n", "Q", "<Nop>", opts)
 -- Quick macro
 keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
 
+-- <C-d> and <C-u> with zz
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+
+-- Keep yanked word when pasting over highlighted, "greates remap ever"
+-- keymap("x", "<leader>p", "\"_dP", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
