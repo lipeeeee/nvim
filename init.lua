@@ -13,8 +13,8 @@ local function init_environment()
   -- AutoExec
   require("lipe.preferences.autoexec")
 
-  -- Keymaps
-  require("lipe.preferences.keymaps")
+  -- Remaps
+  require("lipe.preferences.remaps")
 end
 
 -- Attatch lazy.nvim package manager to nvim

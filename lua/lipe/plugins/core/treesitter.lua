@@ -1,4 +1,4 @@
--- Remove any italic in highlight
+-- Remove italics in highlight
 -- EXPORT THIS FUNCT IF NEEDED
 local function remove_italics()
   vim.cmd("hi Keyword gui=bold")
