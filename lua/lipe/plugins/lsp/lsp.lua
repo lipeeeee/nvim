@@ -1,5 +1,5 @@
 -- Handles config for core lsp packages:
--- nvim-lspconfig, mason, mason-lspconfig 
+-- nvim-lspconfig, mason, mason-lspconfig
 return {
   {
     "neovim/nvim-lspconfig",

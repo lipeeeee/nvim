@@ -1,5 +1,5 @@
-theprimeagen remaps & other
-TJ video
+remove underline in illuminate
+treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
 UNDOTREE
 disable commandline history

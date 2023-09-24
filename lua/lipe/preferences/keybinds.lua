@@ -24,6 +24,14 @@ return {
       ["e"] = { harpoon_ui.toggle_quick_menu, "Menu" },
     },
 
+    -- Help
+    ["H"] = {
+      name = "+Help",
+      ["k"] = { _cmd("Telescope keymaps"), "Keymaps" },
+      ["t"] = { _cmd("Telescope builtin"), "Telescope" },
+      ["T"] = { _cmd("Telescope help_tags"), "Tags" },
+    },
+
     -- LSP
     ["l"] = {
       name = "+LSP",
