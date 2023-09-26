@@ -1,7 +1,6 @@
-GIT
-gitsigns
-vim-fugitive w.e this is 
-lazygit (with delta)
+MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
+    - GIT PLUGINS DONT LOAD
+
 
 nvim col,orizer
 

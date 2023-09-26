@@ -18,6 +18,15 @@ return {
     -- NvimTree
     ["e"] = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
 
+    -- Git
+    g = {
+      name = "+Git",
+      b = { _cmd("Gitsigns blame_line"), "Blame" },
+      c = { _cmd("Telescope git_commits"), "Commits" },
+      s = { _cmd("Git"), "Status" },
+      g = { _cmd("LazyGit"), "LazyGit" },
+    },
+
     -- Harpoon
     ["h"] = {
       name = "+Harpoon",
@@ -75,13 +84,6 @@ return {
     --      f = { _cmd("lua vim.lsp.buf.format{async=true}"), "Format" },
     --      d = { _cmd("Bdelete"), "Delete Current Buffer" },
     --    },
-    --    -- Git
-    --    g = {
-    --      name = "+Git",
-    --      c = { _cmd("Telescope git_commits"), "Commits" },
-    --      b = { _cmd("Gitsigns blame_line"), "Blame" },
-    --    },
-    --
     --    -- LSP
     --    l = {
     --      name = "+LSP",
