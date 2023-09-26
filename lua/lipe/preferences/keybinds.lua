@@ -1,5 +1,6 @@
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
+local directions = require('hop.hint').HintDirection
 
 -- Mapping of keybinds
 local function _cmd(command)

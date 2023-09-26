@@ -22,9 +22,10 @@ vim.g.maplocalleader = " "
 -- Normal --
 -- Fuck Q
 keymap("n", "Q", "<Nop>", opts)
+keymap("n", "q:", "<Nop>", opts)
 
 -- Quick macro
-keymap('n', "<C-m>", ':normal @q<CR>', { noremap = true })
+keymap('n', "<A-m>", ':normal @q<CR>', {})
 
 -- <C-d> and <C-u> with zz
 keymap("n", "<C-u>", "<C-u>zz", opts)

@@ -1,8 +1,14 @@
-remove underline in illuminate
+GIT
+gitsigns
+vim-fugitive w.e this is 
+lazygit (with delta)
+
+nvim col,orizer
+
+bufferline
+
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
-UNDOTREE
-disable commandline history
 change cmd bvackcolor - PMenu (after choosing colorscheme)
 THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
 BARBACUE
