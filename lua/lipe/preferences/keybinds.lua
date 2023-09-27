@@ -64,7 +64,6 @@ return {
       f = { _cmd("Telescope find_files"), "Find File" },
       r = { _cmd("Telescope oldfiles"), "Recent Files" },
       b = { _cmd("Telescope file_browser"), "File Browser" },
-      B = { _cmd("Telescope buffers"), "Buffers" },
       c = { _cmd("Telescope neoclip"), "Clipboard" },
       g = { _cmd("Telescope live_grep"), "Grep" }
     },
