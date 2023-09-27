@@ -2,7 +2,7 @@
 -- LazyGitBorder	Normal	Float terminal border
 return {
   "kdheepak/lazygit.nvim",
-  event = "VeryLazy",
+  cmd = "LazyGit",
   -- optional for floating window border decoration
   dependencies = {
       "nvim-lua/plenary.nvim",

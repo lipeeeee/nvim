@@ -1,8 +1,7 @@
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
-    - GIT PLUGINS DONT LOAD
-
-
-nvim col,orizer
+    - DO NOT LOAD:
+    - GIT PLUGINS
+    - COLORIZER 
 
 bufferline
 

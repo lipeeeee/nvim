@@ -6,7 +6,6 @@ COLORS = {
   GREEN = "#98be65",
   ORANGE = "#FF8800",
   VIOLET = "#a9a1e1",
-  MAGENTA = "#c678dd",
   PURPLE = "#c678dd",
   BLUE = "#51afef",
   RED = "#ec5f67",

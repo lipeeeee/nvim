@@ -1,6 +1,5 @@
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
-local directions = require('hop.hint').HintDirection
 
 -- Mapping of keybinds
 local function _cmd(command)
@@ -52,6 +51,7 @@ return {
       ["n"] = { _cmd("lua vim.diagnostic.goto_next({buffer=, opts0})"), "Diagnostics Next" },
       ["p"] = { _cmd("lua vim.diagnostic.goto_prev({buffer=, opts0})"), "Diagnostics Prev" },
       ["s"] = { _cmd("lua vim.lsp.buf.signature_help()"), "Signature Help" },
+      ["t"] = { _cmd("TroubleToggle"), "Trouble" },
       ["q"] = { _cmd("lua vim.diagnostic.setloclist()"), "Loc List" },
     },
 
@@ -64,46 +64,14 @@ return {
       f = { _cmd("Telescope find_files"), "Find File" },
       r = { _cmd("Telescope oldfiles"), "Recent Files" },
       b = { _cmd("Telescope file_browser"), "File Browser" },
+      B = { _cmd("Telescope buffers"), "Buffers" },
       c = { _cmd("Telescope neoclip"), "Clipboard" },
       g = { _cmd("Telescope live_grep"), "Grep" }
     },
 
     ["U"] = { _cmd("UndotreeToggle"), "Undotree" },
-    --  ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
-    --  ["<leader>"] = {
-    --    -- Open alpha's dashboard
-    --    [';'] = { update_alpha_on_keybind, "Dashboard" },
-    --
-    --    -- NvimTree Toggle
-    --    e = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
-    --
-    --    -- Buffer
-    --    b = {
-    --      name = "+Buffer",
-    --      n = { _cmd("enew"), "New File" },
-    --      f = { _cmd("lua vim.lsp.buf.format{async=true}"), "Format" },
-    --      d = { _cmd("Bdelete"), "Delete Current Buffer" },
-    --    },
-    --    -- LSP
-    --    l = {
-    --      name = "+LSP",
-    --      d = { _cmd("TroubleToggle"), "Diagnostics" },
-    --    },
-    --
-    --    -- Telescope
-    --    -- Quit
-    --    -- q = {
-    --    --   name = "+Quit",
-    --    --   q = { _cmd("Bdelete"), "Buffer Quit" },
-    --    -- },
-    --
-    --    -- ToggleTerm
-    --    T = { _cmd("ToggleTerm"), "Terminal" },
-    --
-    --    -- Lazy
-    --    L = { _cmd("Lazy"), "Lazy" }
-
   },
+
   -- Non-Leader lsp bindings
   ["<C-space>"] = { _cmd("lua vim.lsp.buf.hover()"), "Lsp Hover Info" },
   ["gd"] = { _cmd("lua vim.lsp.buf.definition()"), "Go Definition" },
@@ -117,4 +85,7 @@ return {
   ["<A-2>"] = { function() harpoon_ui.nav_file(2) end, "Harpoon file 2" },
   ["<A-3>"] = { function() harpoon_ui.nav_file(3) end, "Harpoon file 3" },
   ["<A-4>"] = { function() harpoon_ui.nav_file(4) end, "Harpoon file 4" },
+
+  -- ToggleTerm
+  ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },
 }
