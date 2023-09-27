@@ -37,6 +37,7 @@ local function bootstrap_lazy()
     { import = "lipe.plugins.core" },
     { import = "lipe.plugins.lsp" },
     { import = "lipe.plugins.ui" },
+    { import = "lipe.plugins.git" },
   }
 
   require("lazy").setup(plugin_source)
