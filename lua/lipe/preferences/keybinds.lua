@@ -6,11 +6,6 @@ local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
 end
 
-local function update_alpha_on_keybind()
-  -- UPDATE_ALPHA()
-  -- vim.cmd("Alpha")
-end
-
 -- abcdefghijklmnopqrstuvxyz
 return {
   ["<leader>"] = {
