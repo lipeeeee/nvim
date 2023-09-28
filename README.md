@@ -1,4 +1,5 @@
-# NeoVim config (1.0) Vim to Neovim migration, personal nvim cfg
+# NeoVim config (1.0)
+Release 1.0... Vim to Neovim migration, personal nvim cfg
 
 # Installation
 ## Linux
@@ -19,6 +20,7 @@ nvim
 ```
 
 ## CONFIG STRUCTURE
+```
 .
 ├── LICENSE
 ├── README.md
@@ -74,8 +76,10 @@ nvim
         └── utils
             └── time.lua
 12 directories, 41 files
-
+```
 ## Lines of code
+```
+
 find . -name '*.lua' | xargs wc -l
    54 ./init.lua
    45 ./lua/lipe/preferences/options.lua
@@ -116,7 +120,7 @@ find . -name '*.lua' | xargs wc -l
    23 ./lua/lipe/globals/colors.lua
    17 ./lua/lipe/utils/time.lua
 1989 total
-
+```
 # Dependencies
 - 0.9.2 nvim
 - npm, python and a C compiler for basic dependencies
