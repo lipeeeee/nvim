@@ -1,4 +1,4 @@
-# NeoVim config
+# NeoVim config (1.0)
 Vim to Neovim migration, personal nvim cfg
 
 # Installation
@@ -11,9 +11,9 @@ mv ~/.config/nvim ~/.config/nvim_old
 rm -rf ~/.local/share/nvim
 
 # Clone repo
-git clone https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1
+git clone -b 1.0 https://github.com/lipeeeee/.nvim ~/.config/nvim --depth 1
 # OR
-git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1
+git clone -b 1.0 git@github.com:lipeeeee/.nvim.git ~/.config/nvim --depth 1
 
 # Open
 nvim
