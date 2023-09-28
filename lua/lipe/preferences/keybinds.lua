@@ -64,6 +64,8 @@ return {
     },
 
     ["U"] = { _cmd("UndotreeToggle"), "Undotree" },
+
+    ["z"] = { _cmd("ZenMode"), "Zen Mode" },
   },
 
   -- Non-Leader lsp bindings

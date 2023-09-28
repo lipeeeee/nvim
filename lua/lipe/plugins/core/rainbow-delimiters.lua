@@ -1,7 +1,7 @@
 return {
   "hiphish/rainbow-delimiters.nvim",
   event = "VeryLazy",
-  config = function ()
+  config = function()
     local rainbow_delimiters = require("rainbow-delimiters")
 
     vim.g.rainbow_delimiters = {
@@ -22,6 +22,6 @@ return {
         'RainbowDelimiterCyan',
         'RainbowDelimiterRed',
       },
-  }
+    }
   end
 }

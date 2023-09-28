@@ -5,12 +5,14 @@ MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
 
 bufferline
 
+neovim-session-manager
+Persitance
+TODO comments
+
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
 change cmd bvackcolor - PMenu (after choosing colorscheme)
 THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
-BARBACUE
-HOP
 
 see folke
 conform.nvim, see author
@@ -32,19 +34,11 @@ ADD TREESITTER TO KICKSTART WITH FIXER
 - Fix CD in nvimtree
 - Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
 - custom cursor(color)
-- 80 char line
 - Improve aesthetics of current config maybe check r/unixporn
     - colorscheme check tokyonight from folke
     - toggleterm dividers, maybe smth with win*?
 - Image seeeeEEEr? saw on r/unixporn https://www.reddit.com/r/unixporn/comments/164xn0p/bspwm_first_rice/
 
-# REFACTOR
-- Signs collection
-    - Make signs library globally initialized to save a bit on processing power
-- refactor alpha.lua
-- refactor lualine.lua 
-    - tables into their particular files or file in preferences/
-    - better code.. etc
 
 # POSTPONED
 - Function to dinamically change colorscheme without having to go to config files
@@ -54,10 +48,4 @@ ADD TREESITTER TO KICKSTART WITH FIXER
 
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim
-
-- neovim-session-manager
-- dressing
-- Fugitive
-- Persitance
-- TODO comments
 

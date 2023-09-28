@@ -1,8 +1,6 @@
 -- Optional dependencies
 -- sharkdp/fd (finder)
--- nvim-treesitter/nvim-treesitter (finder/preview)
 -- neovim LSP (picker)
--- devicons (icons)
 return {
   {
     "nvim-telescope/telescope.nvim",

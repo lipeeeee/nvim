@@ -1,6 +1,6 @@
 -- Remove underline from selected word
 local function remove_underline()
-  -- Not done
+  -- TODO
 end
 
 return {
