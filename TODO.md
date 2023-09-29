@@ -16,7 +16,6 @@ THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
 
 see folke
 conform.nvim, see author
-zen-mode
 
 :Update
 - MasonUpdate
