@@ -145,6 +145,4 @@ return {
       -- telescope.load_extension "gh"
     end,
   },
-
-  -- Extensions
 }

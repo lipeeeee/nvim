@@ -3,19 +3,17 @@ MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
     - GIT PLUGINS
     - COLORIZER 
 
-bufferline
 
 neovim-session-manager
 Persitance
 TODO comments
+custom cursor(color)
 
+improvement: ExitPre event can be used to close toggleterm process 
+Very later on: make metrics python script
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
 change cmd bvackcolor - PMenu (after choosing colorscheme)
-THEOREM OF BETHOVEN MY NVIM CONFIG IS BETTER THAN VSCODE
-
-see folke
-conform.nvim, see author
 
 :Update
 - MasonUpdate
@@ -26,24 +24,6 @@ conform.nvim, see author
 - LspRestart
 
 ADD TREESITTER TO KICKSTART WITH FIXER
-
------------------------- FROM MASTER
-# TODO 
-- Alpha customization
-- Fix CD in nvimtree
-- Outline in nvim tree like such : https://www.reddit.com/r/unixporn/comments/16akrbt/neovim_tevim/
-- custom cursor(color)
-- Improve aesthetics of current config maybe check r/unixporn
-    - colorscheme check tokyonight from folke
-    - toggleterm dividers, maybe smth with win*?
-- Image seeeeEEEr? saw on r/unixporn https://www.reddit.com/r/unixporn/comments/164xn0p/bspwm_first_rice/
-
-
-# POSTPONED
-- Function to dinamically change colorscheme without having to go to config files
-- spotify-tui integration with neovim (there is like a milion dependencies, not even worth it) lualine flag for paste mode TSInstall init fn() check trouble or smth for required
-- improvement: ExitPre event can be used to close toggleterm process 
-- Very later on: make metrics python script
 
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim

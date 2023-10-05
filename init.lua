@@ -4,7 +4,6 @@ local function init_environment()
   -- Save start time
   NVIM_START_TIME = require("lipe.utils.time").get_current_time_info()
 
-  -- Initialize globals
   require("lipe.globals")
 
   -- Options

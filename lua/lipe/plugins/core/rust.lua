@@ -1,6 +1,7 @@
 return {
   {
     "rust-lang/rust.vim",
+    enabled = false,
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 0
@@ -9,6 +10,7 @@ return {
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
+    enabled = false,
     config = function()
       local rust_tools = require("rust-tools")
 
