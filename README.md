@@ -1,4 +1,4 @@
-# NeoVim config
+# Neovim config
 Vim to Neovim migration, personal nvim cfg
 
 # Installation

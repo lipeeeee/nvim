@@ -1,3 +1,8 @@
+https://preview.redd.it/eioqznqvdnpb1.png?width=1920&format=png&auto=webp&s=a8cc19f14778336cbc97bdff770e0793c866d4d1
+
+--rice
+https://github.com/i3d/vim-jimbothemes#breakingbad
+
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
     - DO NOT LOAD:
     - GIT PLUGINS
@@ -7,13 +12,10 @@ MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
 neovim-session-manager
 Persitance
 TODO comments
-custom cursor(color)
 
 improvement: ExitPre event can be used to close toggleterm process 
-Very later on: make metrics python script
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
-change cmd bvackcolor - PMenu (after choosing colorscheme)
 
 :Update
 - MasonUpdate
