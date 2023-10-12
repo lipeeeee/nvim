@@ -17,16 +17,6 @@ improvement: ExitPre event can be used to close toggleterm process
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
 
-:Update
-- MasonUpdate
-- TSUpdate
-- UpdateRemotePlugins
-
-:Reload
-- LspRestart
-
-ADD TREESITTER TO KICKSTART WITH FIXER
-
 # MISSING PLUGINS
 See https://github.com/folke/dot/tree/master/nvim
 
