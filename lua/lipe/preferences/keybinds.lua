@@ -53,6 +53,9 @@ return {
     -- Lazy
     ["L"] = { _cmd("Lazy"), "Lazy" },
 
+    -- Mason
+    ["M"] = { _cmd("Mason"), "Mason" },
+
     -- Telescope
     ["t"] = {
       name = "+Telescope",
