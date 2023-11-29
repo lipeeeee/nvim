@@ -55,7 +55,6 @@ return {
 
     -- Mason
     ["M"] = { _cmd("Mason"), "Mason" },
-
     -- Telescope
     ["t"] = {
       name = "+Telescope",
