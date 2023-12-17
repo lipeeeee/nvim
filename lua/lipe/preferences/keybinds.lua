@@ -55,6 +55,7 @@ return {
 
     -- Mason
     ["M"] = { _cmd("Mason"), "Mason" },
+
     -- Telescope
     ["t"] = {
       name = "+Telescope",
@@ -65,6 +66,9 @@ return {
       c = { _cmd("Telescope neoclip"), "Clipboard" },
       g = { _cmd("Telescope live_grep"), "Grep" }
     },
+
+    -- Trouble
+    ["T"] = { _cmd("Trouble"), "Trouble" },
 
     ["U"] = { _cmd("UndotreeToggle"), "Undotree" },
 

@@ -21,8 +21,6 @@ vim.cmd [[command! WQA wqa]]
 vim.cmd [[command! WQa wqa]]
 vim.cmd [[command! Wqa wqa]]
 
--- Remove Windows Carriage Return
-
 -- Custom commands
 vim.api.nvim_create_user_command("Update", function()
   vim.cmd [[MasonUpdate]]

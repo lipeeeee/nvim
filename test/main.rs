@@ -1,3 +1,4 @@
+exit(0) 
 fn main() {
     let mut adw = 12;
     let awdinwao;

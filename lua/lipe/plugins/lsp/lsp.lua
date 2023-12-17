@@ -31,7 +31,7 @@ return {
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
       local lspconfig = require("lspconfig")
-
+      lspconfig.pyright.setup {}
       -- mason-lspconfig Setup
       local ensure_installed = require("lipe.lsp.servers")
       mason_lspconfig.setup({
