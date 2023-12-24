@@ -31,7 +31,6 @@ return {
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
       local lspconfig = require("lspconfig")
-      lspconfig.pyright.setup {}
       -- mason-lspconfig Setup
       local ensure_installed = require("lipe.lsp.servers")
       mason_lspconfig.setup({
@@ -48,6 +47,12 @@ return {
 
       -- Specific server options
       for _, server in pairs(ensure_installed) do
+        -- Reset opts just in case they were extended
+        opts = {
+          on_attach = handlers.on_attach,
+          capabilities = handlers.capabilities
+        }
+
         server = vim.split(server, "@")[1]
 
         local require_ok, conf_opts = pcall(require, ("lipe.lsp.settings." .. server))
