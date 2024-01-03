@@ -1,5 +1,6 @@
 # Neovim config
-Vim to Neovim migration, personal nvim cfg
+Cozy neovim config
+![image](https://github.com/lipeeeee/nvim/assets/62669782/10023887-0798-4d74-a1ef-b0437a300c30)
 
 # Installation
 ## Linux
