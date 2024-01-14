@@ -2,6 +2,9 @@
 Cozy neovim config
 ![image](https://github.com/lipeeeee/nvim/assets/62669782/10023887-0798-4d74-a1ef-b0437a300c30)
 
+
+![image](https://github.com/lipeeeee/nvim/assets/62669782/3be5375a-82c6-4fdf-9c80-8e3d9f56656b)
+
 # Installation
 ## Linux
 ```bash
