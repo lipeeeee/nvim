@@ -8,7 +8,7 @@ MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
     - GIT PLUGINS
     - COLORIZER 
 
-
+touch highlights, when hovering and self in python is italic
 neovim-session-manager
 Persitance
 TODO comments
