@@ -20,6 +20,7 @@ vim.cmd [[command! Wa wa]]
 vim.cmd [[command! WQA wqa]]
 vim.cmd [[command! WQa wqa]]
 vim.cmd [[command! Wqa wqa]]
+vim.cmd [[command! Q q]]
 
 -- Custom commands
 vim.api.nvim_create_user_command("Update", function()
@@ -28,6 +29,12 @@ vim.api.nvim_create_user_command("Update", function()
   vim.cmd [[UpdateRemotePlugins]]
 end, {})
 
-vim.api.nvim_create_user_command("Reload", function ()
+vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
+  callback = function()
+    vim.cmd "quit"
+  end,
+})
+
+vim.api.nvim_create_user_command("Reload", function()
   vim.cmd [[LspRestart]]
 end, {})
