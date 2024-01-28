@@ -11,6 +11,9 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 -- Disable command line history
 vim.cmd [[nnoremap q: <nop>]]
 
+-- Disable mouse
+vim.cmd [[set mouse=]]
+
 -- Remap capital wq's to wq
 vim.cmd [[command! W w]]
 vim.cmd [[command! WQ wq]]
