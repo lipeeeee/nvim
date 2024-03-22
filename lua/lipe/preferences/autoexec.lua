@@ -1,7 +1,7 @@
 -- This file will always run on startup
 -- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- Cmd commands
 vim.cmd "set whichwrap+=<,>,[,],h,l"
@@ -24,6 +24,11 @@ vim.cmd [[command! WQA wqa]]
 vim.cmd [[command! WQa wqa]]
 vim.cmd [[command! Wqa wqa]]
 vim.cmd [[command! Q q]]
+
+-- Remap netrw h and l to go up directories
+vim.cmd [[ au FileType netrw nmap <buffer> h -<esc>]]
+-- vim.cmd [[ au FileType netrw nmap <buffer> <left> - ]]
+vim.cmd [[ au FileType netrw nmap <buffer> l <CR>]]
 
 -- Custom commands
 vim.api.nvim_create_user_command("Update", function()

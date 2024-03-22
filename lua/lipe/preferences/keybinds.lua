@@ -6,11 +6,19 @@ local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
 end
 
+-- Process which file explorer to use
+local file_explorer = {}
+if USE_NVIMTREE then
+  file_explorer = { _cmd("NvimTreeToggle"), "NvimTree Toggle" }
+else
+  file_explorer = { _cmd("Ex"), "Netrw Toggle" }
+end
+
 -- abcdefghijklmnopqrstuvxyz
 return {
   ["<leader>"] = {
-    -- NvimTree
-    ["e"] = { _cmd("NvimTreeToggle"), "NvimTree Toggle" },
+    -- File explorer
+    ["e"] = file_explorer,
 
     -- Git
     g = {
