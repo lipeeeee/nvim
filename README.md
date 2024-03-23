@@ -1,5 +1,4 @@
 # Neovim config
-Cozy neovim config
 
 # Installation
 ## Linux
