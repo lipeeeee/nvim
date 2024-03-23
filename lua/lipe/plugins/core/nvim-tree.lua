@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   lazy = false, -- Probably cant lazy load this
-  enable = USE_NVIMTREE,
+  enable = (FILE_EXPLORER_TO_USE == NVIM_TREE),
   dependencies = {
     "nvim-tree/nvim-web-devicons"
   },

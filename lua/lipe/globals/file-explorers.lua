@@ -2,6 +2,6 @@ NETRW = "netrw"
 NVIM_TREE = "nvim-tree"
 
 FILE_EXPLORERS = {
-  [NVIM_TREE] = "NvimTreeTogle",
+  [NVIM_TREE] = "NvimTreeToggle",
   [NETRW] = "Ex"
 }
