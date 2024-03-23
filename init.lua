@@ -3,9 +3,10 @@
 local function init_environment()
   -- Save start time
   NVIM_START_TIME = require("lipe.utils.time").get_current_time_info()
-  USE_NVIMTREE = false
 
+  -- Globals
   require("lipe.globals")
+  FILE_EXPLORER_TO_USE = NETRW
 
   -- Options
   require("lipe.preferences.options")

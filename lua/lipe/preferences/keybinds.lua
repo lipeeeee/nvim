@@ -6,19 +6,20 @@ local function _cmd(command)
   return "<cmd>" .. command .. "<cr>"
 end
 
--- Process which file explorer to use
-local file_explorer = {}
-if USE_NVIMTREE then
-  file_explorer = { _cmd("NvimTreeToggle"), "NvimTree Toggle" }
-else
-  file_explorer = { _cmd("Ex"), "Netrw Toggle" }
-end
-
 -- abcdefghijklmnopqrstuvxyz
 return {
   ["<leader>"] = {
-    -- File explorer
-    ["e"] = file_explorer,
+
+    -- Buffer actions
+    b = {
+      name = "+Buffer",
+      ["d"] = { _cmd("bd"), "Delete current buffer" },
+      ["D"] = { _cmd("%bd|e#"), "Delete every other buffer" },
+      ["l"] = { _cmd("Telescope buffers"), "List Buffers" },
+    },
+
+    -- Dynamic file explorer, input gotten from entry init.lua
+    ["e"] = { _cmd(FILE_EXPLORERS[FILE_EXPLORER_TO_USE]), FILE_EXPLORER_TO_USE .. " Toggle" },
 
     -- Git
     g = {
@@ -96,6 +97,7 @@ return {
   ["<A-2>"] = { function() harpoon_ui.nav_file(2) end, "Harpoon file 2" },
   ["<A-3>"] = { function() harpoon_ui.nav_file(3) end, "Harpoon file 3" },
   ["<A-4>"] = { function() harpoon_ui.nav_file(4) end, "Harpoon file 4" },
+  ["<A-5>"] = { function() harpoon_ui.nav_file(5) end, "Harpoon file 5" },
 
   -- ToggleTerm
   ["<C-\\>"] = { _cmd("ToggleTerm"), "Terminal" },

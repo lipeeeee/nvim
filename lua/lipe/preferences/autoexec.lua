@@ -25,10 +25,10 @@ vim.cmd [[command! WQa wqa]]
 vim.cmd [[command! Wqa wqa]]
 vim.cmd [[command! Q q]]
 
--- Remap netrw h and l to go up directories
+-- Netrw usage tweaks
 vim.cmd [[ au FileType netrw nmap <buffer> h -<esc>]]
--- vim.cmd [[ au FileType netrw nmap <buffer> <left> - ]]
 vim.cmd [[ au FileType netrw nmap <buffer> l <CR>]]
+  vim.cmd [[ au FileType netrw nmap <buffer> q :bd<CR>]]
 
 -- Custom commands
 vim.api.nvim_create_user_command("Update", function()
