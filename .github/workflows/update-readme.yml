@@ -1,0 +1,32 @@
+name: Update README with metrics
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Generate metrics
+        run: python3 metrics.py > metrics.txt
+
+      - name: Update README
+        run: |
+          sed -i 's/Metrics:.*$/Metrics: $(cat metrics.txt)/' README.md
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git add README.md
+          git commit -m "Update README with metrics" || true
+          git push
+
