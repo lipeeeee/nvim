@@ -28,7 +28,10 @@ vim.cmd [[command! Q q]]
 -- Netrw usage tweaks
 vim.cmd [[ au FileType netrw nmap <buffer> h -<esc>]]
 vim.cmd [[ au FileType netrw nmap <buffer> l <CR>]]
-  vim.cmd [[ au FileType netrw nmap <buffer> q :bd<CR>]]
+vim.cmd [[ au FileType netrw nmap <buffer> q :bd<CR>]]
+
+-- Fugitive usage tweaks
+vim.cmd [[ au FileType fugitive nmap <buffer> q :bd<CR>]]
 
 -- Custom commands
 vim.api.nvim_create_user_command("Update", function()
