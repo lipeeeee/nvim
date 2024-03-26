@@ -6,7 +6,7 @@ local function init_environment()
 
   -- Globals
   require("lipe.globals")
-  FILE_EXPLORER_TO_USE = NETRW
+  FILE_EXPLORER_TO_USE = NVIM_TREE
 
   -- Options
   require("lipe.preferences.options")

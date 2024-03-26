@@ -24,10 +24,12 @@ return {
     -- Git
     g = {
       name = "+Git",
+      a = { _cmd("Git add ."), "Add" },
       b = { _cmd("Gitsigns blame_line"), "Blame" },
-      c = { _cmd("Telescope git_commits"), "Commits" },
-      s = { _cmd("Git"), "Status" },
+      c = { _cmd("Git commit"), "Commit" },
+      l = { _cmd("Git log"), "Log" },
       g = { _cmd("LazyGit"), "LazyGit" },
+      s = { _cmd("Git"), "Status" },
     },
 
     -- Harpoon
