@@ -34,9 +34,8 @@ def measure_startup_time():
 
 if __name__ == "__main__":
     number_lines, number_files = count_lines_and_files(ACCEPTED_FILE_EXTENSIONS, ".") 
-    headless_startup_time = measure_startup_time()
+    #headless_startup_time = measure_startup_time()
 
     print(f"Config files: {number_files}")
     print(f"Lines of code: {number_lines}")
-    print(f"Startup time: {headless_startup_time}")
 
