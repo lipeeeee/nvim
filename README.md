@@ -1,6 +1,10 @@
 # Neovim config
-Config Files: x
+
+Config files: x
+
+
 Lines of code: x
+
 
 # Installation
 ## Linux

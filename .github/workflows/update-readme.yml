@@ -19,7 +19,7 @@ jobs:
         run: |
           # Configure Git user information
           git config --global user.email "github-actions@users.noreply.github.com"
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "[BOT] Update Readme"
 
       - name: Generate metrics
         run: python3 metrics.py > metrics.txt
