@@ -15,6 +15,12 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Set up Git
+        run: |
+          # Configure Git user information
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Generate metrics
         run: python3 metrics.py > metrics.txt
 
@@ -29,16 +35,16 @@ jobs:
           sed -i "s/Config files:.*/Config files: $config_files/" README.md
           sed -i "s/Lines of code:.*/Lines of code: $lines_of_code/" README.md
 
-          # Configure Git user information
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git config --global user.name "GitHub Actions"
-
+      - name: Commit changes
+        run: |
           # Add the updated README file to the commit
           git add README.md
 
           # Commit the changes
           git commit -m "Update README with metrics" || true
 
-          # Push the changes to the repository
-          git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with: 
+          github_token: ${{ secrets.ACESS_TOKEN }}
 
