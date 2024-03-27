@@ -1,9 +1,10 @@
 # Neovim config
 
-Config files: x
+*Check print-metrics job for updated metrics on every commit*
 
+Config files: 41
 
-Lines of code: x
+Lines of code: 2188
 
 
 # Installation
