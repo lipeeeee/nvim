@@ -1,0 +1,20 @@
+name: Print metrics
+
+on: [push]
+
+jobs:
+  print-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Print metrics
+        run: python3 metrics.py
+
