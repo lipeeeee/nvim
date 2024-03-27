@@ -20,25 +20,25 @@ jobs:
 
       - name: Update README
         run: |
-					# Read metrics from file
-    			config_files=$(sed -n '1p' metrics.txt)
-    			lines_of_code=$(sed -n '2p' metrics.txt)
+          # Read metrics from file
+          config_files=$(sed -n '1p' metrics.txt)
+          lines_of_code=$(sed -n '2p' metrics.txt)
     
-					# Search for the lines containing "Config files:" and "Lines of code:" in the README file
-					# If found, replace the existing metrics with the new ones
-					sed -i "s/Config files:.*/Config files: $config_files/" README.md
-					sed -i "s/Lines of code:.*/Lines of code: $lines_of_code/" README.md
+          # Search for the lines containing "Config files:" and "Lines of code:" in the README file
+          # If found, replace the existing metrics with the new ones
+          sed -i "s/Config files:.*/Config files: $config_files/" README.md
+          sed -i "s/Lines of code:.*/Lines of code: $lines_of_code/" README.md
 
-					# Configure Git user information
-					git config --global user.email "github-actions@users.noreply.github.com"
-					git config --global user.name "GitHub Actions"
+          # Configure Git user information
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
 					
-					# Add the updated README file to the commit
-					git add README.md
+          # Add the updated README file to the commit
+          git add README.md
 					
-					# Commit the changes
-					git commit -m "Update README with metrics" || true
+          # Commit the changes
+          git commit -m "Update README with metrics" || true
 					
-					# Push the changes to the repository
-					git push
+          # Push the changes to the repository
+          git push
 
