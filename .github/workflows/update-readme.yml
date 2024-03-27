@@ -32,13 +32,13 @@ jobs:
           # Configure Git user information
           git config --global user.email "github-actions@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
-					
+
           # Add the updated README file to the commit
           git add README.md
-					
+
           # Commit the changes
           git commit -m "Update README with metrics" || true
-					
+
           # Push the changes to the repository
           git push
 
