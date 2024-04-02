@@ -17,7 +17,8 @@ return {
       ["l"] = { _cmd("Telescope buffers"), "List Buffers" },
     },
 
-    ["e"] = { _cmd("Ex"), "Netrw Toggle" },
+    -- Dynamic file explorer, input gotten from entry init.lua
+    ["e"] = { _cmd(FILE_EXPLORERS[FILE_EXPLORER_TO_USE]), FILE_EXPLORER_TO_USE .. " Toggle" },
 
     -- Git
     g = {
