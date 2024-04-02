@@ -1,2 +1,2 @@
 DEFAULT_ENV = "lipe"
-ENVIRONMENT_FILE = ".environment"
+ENVIRONMENT_FILE = os.getenv("HOME") .. "/.config/nvim/.environment"
