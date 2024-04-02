@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check for environment name
+if [ -z "$1" ]; then
+  echo "No environment name supplied"
+  exit
+fi
+
 env_root=lua/$1
 
 # Check if env already exists
