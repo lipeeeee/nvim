@@ -1,0 +1,5 @@
+# Storage of environment
+.environment
+
+# lazy-lock
+lazy-lock.json
