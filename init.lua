@@ -1,12 +1,14 @@
 -- This file works as "kernel" of config
 -- Initialize config environment
 local function init_environment()
-  -- Save start time
-  NVIM_START_TIME = require("lipe.utils.time").get_current_time_info()
+  -- Shared globals
+  require("shared.globals")
 
-  -- Globals
+  -- Save start time
+  NVIM_START_TIME = require("shared.utils.time").get_current_time_info()
+
+  -- Environment globals
   require("lipe.globals")
-  FILE_EXPLORER_TO_USE = NVIM_TREE
 
   -- Options
   require("lipe.preferences.options")
@@ -34,22 +36,24 @@ local function bootstrap_lazy()
   vim.opt.rtp:prepend(lazypath)
 
   -- Where to look for plugins
-  local plugin_source = {
-    { import = "lipe.plugins.core" },
-    { import = "lipe.plugins.lsp" },
-    { import = "lipe.plugins.ui" },
-    { import = "lipe.plugins.git" },
-  }
+  local plugin_source = require("lipe.plugins.sources")
 
   require("lazy").setup(plugin_source)
 end
 
--- Post plugin processing
-local function post_plugin_processing()
-  -- Colorscheme
-  require("lipe.preferences.colorscheme")
+-- Get environment to use
+local function get_environment()
+  local environment_file_exists = require("shared.utils.io").file_exists(ENVIRONMENT_FILE)
+
+  if not environment_file_exists then
+    require("shared.utils.io").create_file(ENVIRONMENT_FILE, DEFAULT_ENV)
+  end
+
+  return "x"
 end
 
 init_environment()
 bootstrap_lazy()
-post_plugin_processing()
+-- Customization file for each env if necessary
+require("lipe.plugins.customize")
+get_environment()
