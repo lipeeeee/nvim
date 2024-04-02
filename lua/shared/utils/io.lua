@@ -1,7 +1,12 @@
 -- Read file data
 local function read_file_data(file_path)
-
-  
+  local data = ""
+  local f = io.open(file_path, "r")
+  if f ~= nil then
+    data = f:read()
+    io.close(f)
+  end
+  return data
 end
 
 -- Override file data
