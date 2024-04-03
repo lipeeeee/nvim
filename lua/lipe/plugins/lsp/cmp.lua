@@ -2,7 +2,7 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    version = "2.*",
+    version = "v2.*",
     lazy = true, -- nvim-cmp will load luasnip
     dependencies = {
       "rafamadriz/friendly-snippets",
