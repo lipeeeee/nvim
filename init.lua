@@ -19,7 +19,9 @@ local function init_core()
   NVIM_START_TIME = require("shared.utils.time").get_current_time_info()
 
   -- Get environment to use
-  NVIM_ENVIRONMENT = get_environment()
+  -- COMMENT THIS FOR DYNAMIC ENVIRONMENT PROCESSING
+  NVIM_ENVIRONMENT = "lipe"
+  --NVIM_ENVIRONMENT = get_environment()
 end
 
 -- Initialize config environment
