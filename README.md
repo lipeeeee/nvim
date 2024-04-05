@@ -2,9 +2,9 @@
 
 *Check print-metrics job for updated metrics on every commit*
 
-Config files: 41
+Config files: 52
 
-Lines of code: 2188
+Lines of code: 2625
 
 
 # Installation
