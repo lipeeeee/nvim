@@ -1,20 +1,10 @@
 -- Handles everything cmp related
 return {
   {
-    "L3MON4D3/LuaSnip",
-    version = "v2.*",
-    lazy = true, -- nvim-cmp will load luasnip
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-    },
-    config = function()
-      require("luasnip/loaders/from_vscode").lazy_load()
-    end,
-    build = "make install_jsregexp", -- Optional
-  },
-  {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    -- !!! I have no idea but if we don't lazy load this in any way the remove_italics 
+    -- function (in treesitter.lua) won't work and things will become italic again...
+    event = "VeryLazy",
     dependencies = {
       "L3MON4D3/LuaSnip",         -- Snippet engine
       "saadparwaiz1/cmp_luasnip", -- Snippet completion
@@ -106,7 +96,7 @@ return {
         },
         window = {
           completion = cmp.config.window.bordered({
-            border = "single",
+            border = "none", -- "single"
           }),
           documentation = cmp.config.window.bordered({
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
