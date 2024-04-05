@@ -24,6 +24,7 @@ vim.cmd [[command! WQA wqa]]
 vim.cmd [[command! WQa wqa]]
 vim.cmd [[command! Wqa wqa]]
 vim.cmd [[command! Q q]]
+vim.cmd [[command! Qa qa]]
 
 -- Netrw usage tweaks
 vim.cmd [[ au FileType netrw nmap <buffer> h -<esc>]]
