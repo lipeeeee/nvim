@@ -26,7 +26,7 @@ nvim
 ```
 
 # Dependencies
-- 0.9.2 nvim
+- 0.9.2+ nvim
 - npm, python and a C compiler for basic dependencies
 
 # TODO
