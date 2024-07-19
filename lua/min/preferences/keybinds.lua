@@ -7,6 +7,8 @@ end
 
 -- abcdefghijklmnopqrstuvxyz
 return {
+
+  -- { "<A-1>", <function 1>, desc = "Harpoon file 1" },
   ["<leader>"] = {
 
     -- Buffer actions
@@ -33,7 +35,7 @@ return {
     -- Harpoon
     ["h"] = {
       name = "+Harpoon",
-      ["a"] = { function() harpoon:list():append() end, "Add file" },
+      ["a"] = { function() harpoon:list():add_file() end, "Add file" },
       ["e"] = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Menu" },
     },
 
