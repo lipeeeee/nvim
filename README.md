@@ -30,10 +30,9 @@ nvim
 - npm, python and a C compiler for basic dependencies
 
 # TODO
-https://preview.redd.it/eioqznqvdnpb1.png?width=1920&format=png&auto=webp&s=a8cc19f14778336cbc97bdff770e0793c866d4d1
+https://preview.redd.it/eioqznqvdnpb1.png?width=1920&f
 
---rice
-https://github.com/i3d/vim-jimbothemes#breakingbad
+snipe.nvim
 
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
     - DO NOT LOAD:
