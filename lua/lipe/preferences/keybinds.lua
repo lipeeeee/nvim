@@ -12,6 +12,7 @@ return {
 
   -- Buffer actions
   { "<leader>b", group = "+Buffer" },
+  { "<leader>bs", function () require("snipe").open_buffer_menu() end, desc = "Snipe buffer" },
   { "<leader>bd", _cmd("bd"), desc = "Delete current buffer" },
   { "<leader>bD", _cmd("%bd|e#"), desc = "Delete every other buffer" },
   { "<leader>bl", _cmd("Telescope buffers"), desc = "List Buffers" },
