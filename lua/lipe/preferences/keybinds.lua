@@ -17,6 +17,12 @@ return {
   { "<leader>bD", _cmd("%bd|e#"), desc = "Delete every other buffer" },
   { "<leader>bl", _cmd("Telescope buffers"), desc = "List Buffers" },
 
+  -- Commands/Custom shortcuts
+  { "<leader>c", group = "+Commands" },
+  { "<leader>cs", group = "+Set" },
+  { "<leader>csn", _cmd("set nopaste"), desc = "set nopaste" },
+  { "<leader>csp", _cmd("set paste"), desc = "set paste" },
+
   -- Git
   { "<leader>g", group = "+Git" },
   { "<leader>ga", _cmd("Git add ."), desc = "Add" },
