@@ -32,6 +32,9 @@ nvim
 # TODO
 https://preview.redd.it/eioqznqvdnpb1.png?width=1920&f
 
+https://www.youtube.com/watch?v=5RKl6-CdoqQ
+
+
 snipe.nvim
 
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
