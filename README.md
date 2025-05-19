@@ -34,7 +34,6 @@ https://preview.redd.it/eioqznqvdnpb1.png?width=1920&f
 
 https://www.youtube.com/watch?v=5RKl6-CdoqQ
 
-
 snipe.nvim
 
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
@@ -51,5 +50,9 @@ improvement: ExitPre event can be used to close toggleterm process
 treesitter textobjets
 lsp (research what's needed, find null-ls alternatives)
 
-# MISSING PLUGINS
-See https://github.com/folke/dot/tree/master/nvim
+colorschme> git@github.com:vague2k/vague.nvim.git
+
+# Refactoring
+- Cleaner/More monochrome colorscheme
+- Refactoring tools (like grep and fzf)
+- Maybe remove some plugins im not using
