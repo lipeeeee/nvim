@@ -22,11 +22,6 @@ nvim
 - 0.9.2+ nvim
 - npm, fzf, python and a C compiler for basic dependencies
 
-# TODO
-https://preview.redd.it/eioqznqvdnpb1.png?width=1920&f
-
-https://www.youtube.com/watch?v=5RKl6-CdoqQ
-
 # Better workflow 
 - Cleaner/More monochrome colorscheme (git@github.com:vague2k/vague.nvim.git)
 - Use more SNIPE; QUICKLIST; HARPOON; SEARCH ('s' key)
