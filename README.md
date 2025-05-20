@@ -1,4 +1,5 @@
 # Neovim config
+![image](https://github.com/user-attachments/assets/b6f097f1-e744-4616-98ef-dd8ac4c68015)
 
 # Installation
 ## Linux
