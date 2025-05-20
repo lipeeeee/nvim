@@ -1,12 +1,5 @@
 # Neovim config
 
-*Check print-metrics job for updated metrics on every commit*
-
-Config files: 52
-
-Lines of code: 2625
-
-
 # Installation
 ## Linux
 ```bash
@@ -34,25 +27,19 @@ https://preview.redd.it/eioqznqvdnpb1.png?width=1920&f
 
 https://www.youtube.com/watch?v=5RKl6-CdoqQ
 
-snipe.nvim
-
 MAKE FLAG FOR ESSENTIALS OR FULL PLUGINS IN INIT.LUA
     - DO NOT LOAD:
     - GIT PLUGINS
     - COLORIZER 
 
-touch highlights, when hovering and self in python is italic
-neovim-session-manager
-Persitance
-TODO comments
-
-improvement: ExitPre event can be used to close toggleterm process 
 treesitter textobjets
-lsp (research what's needed, find null-ls alternatives)
 
 colorschme> git@github.com:vague2k/vague.nvim.git
 
 # Refactoring
 - Cleaner/More monochrome colorscheme
 - Refactoring tools (like grep and fzf)
-- Maybe remove some plugins im not using
+- Use more SNIPE; QUICKLIST; HARPOON; SEARCH ('s' key)
+- Use less NVIM-TREE
+- Snipe config (ctrl+vimbinds; l to open; d to close buffer)
+- More minimal gitsigns and lsp notifications?
