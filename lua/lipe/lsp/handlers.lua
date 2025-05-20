@@ -23,13 +23,14 @@ M.setup = function()
   }
 
   -- Define signs internally
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, {
-      texthl = sign.name,
-      text = sign.text,
-      numhl = ""
-    })
-  end
+  -- WARNING: I don't know what this does but it is deprecated now
+  -- for _, sign in ipairs(signs) do
+    -- vim.fn.sign_define(sign.name, {
+    --   texthl = sign.name,
+    --   text = sign.text,
+    --   numhl = ""
+    -- })
+  -- end
 
   vim.diagnostic.config({
     virtual_text = true, -- text in front of line

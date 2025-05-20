@@ -16,6 +16,7 @@ return {
   -- Quickfix list
   { "<leader>q", group = "+Quickfix" },
   { "<leader>qe", _cmd("copen"), desc = "Open" },
+  { "<leader>qd", _cmd("lua vim.diagnostic.setqflist()"), desc = "Add LSP diagnostics to qf" },
   { "<leader>qa", function ()
     local file = vim.api.nvim_buf_get_name(0)
     local pos = vim.api.nvim_win_get_cursor(0) -- {line, col}
@@ -80,7 +81,7 @@ return {
 
   -- Telescope
   { "<leader>t", group = "+Telescope" },
-  { "<leader>tf", _cmd("Telescope find_files"), desc = "Find File" },
+  { "<leader>tf", function() require("telescope.builtin").find_files({previewer = false}) end, desc = "Find File" },
   { "<leader>tr", _cmd("Telescope oldfiles"), desc = "Recent Files" },
   { "<leader>tB", _cmd("Telescope file_browser"), desc = "File Browser" },
   { "<leader>tb", _cmd("Telescope buffers"), desc = "Buffers" },
