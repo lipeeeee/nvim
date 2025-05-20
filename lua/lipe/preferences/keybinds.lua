@@ -10,15 +10,34 @@ return {
   -- Dynamic file explorer, input gotten from entry init.lua
   { "<leader>e", _cmd(FILE_EXPLORERS[FILE_EXPLORER_TO_USE]), desc = FILE_EXPLORER_TO_USE .. " Toggle" },
 
+  -- Snipe buffer
+  { "<leader>i", function () require("snipe").open_buffer_menu() end, desc = "Snipe buffer" },
+
+  -- Quickfix list
+  { "<leader>q", group = "+Quickfix" },
+  { "<leader>qe", _cmd("copen"), desc = "Open" },
+  { "<leader>qd", _cmd("lua vim.diagnostic.setqflist()"), desc = "Add LSP diagnostics to qf" },
+  { "<leader>qa", function ()
+    local file = vim.api.nvim_buf_get_name(0)
+    local pos = vim.api.nvim_win_get_cursor(0) -- {line, col}
+    local lnum = pos[1]
+    local col = pos[2] + 1  -- Lua columns are 0-indexed; quickfix expects 1-indexed
+    vim.fn.setqflist({}, 'r', {
+      items = {
+        { filename = file, lnum = lnum, col = col, text = "" }
+      }
+    }) end, desc = "Add current buffer"
+  },
+
   -- Buffer actions
   { "<leader>b", group = "+Buffer" },
-  { "<leader>bs", function () require("snipe").open_buffer_menu() end, desc = "Snipe buffer" },
   { "<leader>bd", _cmd("bd"), desc = "Delete current buffer" },
   { "<leader>bD", _cmd("%bd|e#"), desc = "Delete every other buffer" },
   { "<leader>bl", _cmd("Telescope buffers"), desc = "List Buffers" },
 
   -- Commands/Custom shortcuts
   { "<leader>c", group = "+Commands" },
+  { "<leader>cg", ":grep ", desc = "grep" }, -- Start 'grepping'
   { "<leader>cs", group = "+Set" },
   { "<leader>csn", _cmd("set nopaste"), desc = "set nopaste" },
   { "<leader>csp", _cmd("set paste"), desc = "set paste" },
@@ -52,7 +71,6 @@ return {
   { "<leader>ln", _cmd("lua vim.diagnostic.goto_next({buffer=, opts0})"), desc = "Diagnostics Next" },
   { "<leader>lp", _cmd("lua vim.diagnostic.goto_prev({buffer=, opts0})"), desc = "Diagnostics Prev" },
   { "<leader>ls", _cmd("lua vim.lsp.buf.signature_help()"), desc = "Signature Help" },
-  { "<leader>lt", _cmd("TroubleToggle"), desc = "Trouble" },
   { "<leader>lq", _cmd("lua vim.diagnostic.setloclist()"), desc = "Loc List" },
 
   -- Lazy
@@ -63,15 +81,12 @@ return {
 
   -- Telescope
   { "<leader>t", group = "+Telescope" },
-  { "<leader>tf", _cmd("Telescope find_files"), desc = "Find File" },
+  { "<leader>tf", function() require("telescope.builtin").find_files({previewer = false}) end, desc = "Find File" },
   { "<leader>tr", _cmd("Telescope oldfiles"), desc = "Recent Files" },
   { "<leader>tB", _cmd("Telescope file_browser"), desc = "File Browser" },
   { "<leader>tb", _cmd("Telescope buffers"), desc = "Buffers" },
   { "<leader>tc", _cmd("Telescope neoclip"), desc = "Clipboard" },
   { "<leader>tg", _cmd("Telescope live_grep"), desc = "Grep" },
-
-  -- Trouble
-  { "<leader>T", _cmd("Trouble"), desc = "Trouble" },
 
   -- Undotree 
   { "<leader>U", _cmd("UndotreeToggle"), desc = "Undotree" },
@@ -85,7 +100,6 @@ return {
   { "gD", _cmd("lua vim.lsp.buf.declaration()"), desc = "Go Declaration" },
   { "gI", _cmd("lua vim.lsp.buf.implementation()"), desc = "Go Implementation" },
   { "gr", _cmd("lua vim.lsp.buf.references()"), desc = "Go References" },
-  -- ["gl"] = { _cmd("lua vim.diagnostic.open_float()"), "Go Diagnostics" },
 
   -- Harpoon
   { "<A-1>", function() harpoon:list():select(1) end, desc = "Harpoon file 1" },
@@ -94,7 +108,4 @@ return {
   { "<A-4>", function() harpoon:list():select(4) end, desc = "Harpoon file 4" },
   { "<A-5>", function() harpoon:list():select(5) end, desc = "Harpoon file 5" },
   { "<A-6>", function() harpoon:list():select(6) end, desc = "Harpoon file 6" },
-
-  -- ToggleTerm
-  { "<C-\\>", _cmd("ToggleTerm"), desc = "Toggle Term" },
 }

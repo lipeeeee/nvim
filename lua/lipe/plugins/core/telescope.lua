@@ -6,7 +6,7 @@ return {
     "nvim-telescope/telescope.nvim",
     -- Load on Telescope command
     cmd = "Telescope",
-    tag = '0.1.6',
+    tag = '0.1.8',
     dependencies = {
       {
         "AckslD/nvim-neoclip.lua",
@@ -17,7 +17,6 @@ return {
       "nvim-telescope/telescope-ui-select.nvim",
       "nvim-lua/plenary.nvim",
       "BurntSushi/ripgrep",
-      "nvim-tree/nvim-web-devicons",
     },
     config = function()
       local telescope = require("telescope")
@@ -26,10 +25,18 @@ return {
       telescope.setup {
         defaults = {
 
+          -- path_display = { "smart" },
           prompt_prefix = "> ",
           selection_caret = "> ",
-          color_devicons = true,
-          -- path_display = { "smart" },
+          color_devicons = false,
+          use_icons = false,
+          layout_strategy = "bottom_pane",
+          layout_config = {
+            width = 0.1,
+            height = 18,
+            prompt_position = "top",
+          },
+          sorting_strategy = "ascending",
 
           mappings = {
             i = {
