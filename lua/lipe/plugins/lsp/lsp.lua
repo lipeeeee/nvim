@@ -30,7 +30,7 @@ return {
     },
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
-      local lspconfig = require("lspconfig")
+
       -- mason-lspconfig Setup
       local ensure_installed = require("lipe.lsp.servers")
       mason_lspconfig.setup({
@@ -60,7 +60,8 @@ return {
           opts = vim.tbl_deep_extend("force", conf_opts, opts)
         end
 
-        lspconfig[server].setup(opts)
+        -- lspconfig[server].setup(opts)
+        vim.lsp.config(server, opts)
       end
 
       handlers.setup()
