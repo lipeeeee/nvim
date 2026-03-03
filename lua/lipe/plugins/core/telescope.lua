@@ -6,7 +6,7 @@ return {
     "nvim-telescope/telescope.nvim",
     -- Load on Telescope command
     cmd = "Telescope",
-    tag = '0.1.8',
+    version = '*',
     dependencies = {
       {
         "AckslD/nvim-neoclip.lua",
