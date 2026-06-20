@@ -30,6 +30,12 @@ return {
           selection_caret = "> ",
           color_devicons = false,
           use_icons = false,
+          preview = {
+            -- telescope's treesitter previewer calls nvim-treesitter.parsers /
+            -- nvim-treesitter.configs which were removed in the post-2024
+            -- refactor. Disable it; regex highlighting still applies.
+            treesitter = false,
+          },
           layout_strategy = "bottom_pane",
           layout_config = {
             width = 0.1,

@@ -1,5 +1,4 @@
--- Remove italics in highlight
--- EXPORT THIS FUNCT IF NEEDED
+-- Remove italics in highlight groups
 local function remove_italics()
   vim.cmd("hi Keyword gui=bold")
   vim.cmd("hi @keyword.return gui=bold")
@@ -10,51 +9,23 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
     config = function()
-      local ts_config = require("nvim-treesitter.configs")
+      -- Post-2024 refactor API: nvim-treesitter.configs is gone.
+      -- The plugin now only manages parser installation; highlight/indent
+      -- are handled by Neovim's native vim.treesitter API.
+      require("nvim-treesitter").setup()
 
-      ts_config.setup {
-        -- A list of parser names, or "all" (the five listed parsers should always be installed)
-        ensure_installed = { "c", "lua", "python" },
-
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
-
-        -- Automatically install missing parsers when entering buffer
-        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-        auto_install = true,
-
-        ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-        -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-        -- Indentation
-        indent = { enable = true },
-
-        highlight = {
-          enable = true,
-          -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-          -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-          -- Using this option may slow down your editor, and you may see some duplicate highlights.
-          -- Instead of true it can also be a list of languages
-          additional_vim_regex_highlighting = false,
-          disable = { "rust" },
-        },
-
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "gnn", -- set to `false` to disable one of the mappings
-            node_incremental = "grn",
-            scope_incremental = "grc",
-            node_decremental = "grm",
-          },
-        },
-      }
+      -- Enable treesitter highlighting for every buffer that has a parser.
+      -- pcall so buffers without a parser fall back to regex syntax silently.
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          -- Skip special buffers
+          if vim.bo[args.buf].buftype ~= "" then return end
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
 
       -- Fix dumb italic defaults
       remove_italics()
-    end
+    end,
   },
-  {
-    "nvim-treesitter/playground", event = "VeryLazy"
-  }
 }

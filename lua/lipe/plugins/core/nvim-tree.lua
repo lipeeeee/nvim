@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   lazy = false, -- Probably cant lazy load this
-  enable = (FILE_EXPLORER_TO_USE == NVIM_TREE),
+  enabled = (FILE_EXPLORER_TO_USE == NVIM_TREE),
   dependencies = {
     "nvim-tree/nvim-web-devicons"
   },
@@ -65,7 +65,7 @@ return {
       renderer = {
         add_trailing = false,
         group_empty = false,
-        highlight_git = true,
+        highlight_git = "icon",
         full_name = false,
         highlight_opened_files = "none",
         root_folder_label = ":t",
@@ -233,10 +233,7 @@ return {
           watcher = false,
         },
       },
-      system_open = {
-        cmd = nil,
-        args = {},
-      },
+
     }
   end,
 }

@@ -68,8 +68,8 @@ return {
   { "<leader>lr", _cmd("lua vim.lsp.buf.rename()"), desc = "Rename" },
   { "<leader>li", _cmd("LspInfo"), desc = "Info" },
   { "<leader>la", _cmd("lua vim.lsp.buf.code_action()"), desc = "Code Actions" },
-  { "<leader>ln", _cmd("lua vim.diagnostic.goto_next({buffer=, opts0})"), desc = "Diagnostics Next" },
-  { "<leader>lp", _cmd("lua vim.diagnostic.goto_prev({buffer=, opts0})"), desc = "Diagnostics Prev" },
+  { "<leader>ln", function() vim.diagnostic.jump({ count = 1,  float = true }) end, desc = "Diagnostics Next" },
+  { "<leader>lp", function() vim.diagnostic.jump({ count = -1, float = true }) end, desc = "Diagnostics Prev" },
   { "<leader>ls", _cmd("lua vim.lsp.buf.signature_help()"), desc = "Signature Help" },
   { "<leader>lq", _cmd("lua vim.diagnostic.setloclist()"), desc = "Loc List" },
 
