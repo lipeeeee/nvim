@@ -1,4 +1,4 @@
--- :help options
+-- local opts :help options
 local options = {
   backup = false,                                 -- creates a backup file
   clipboard = "unnamedplus",                      -- allows neovim to access the system clipboard
@@ -35,11 +35,19 @@ local options = {
   signcolumn = "yes",                             -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                                   -- display lines as one long line
   scrolloff = 8,                                  -- is one of my fav
-  sidescrolloff = 8,
   guifont = "monospace:h17",                      -- the font used in graphical neovim applications
+  sidescrolloff = 8,
 }
 vim.opt.shortmess:append "c"
-
 for option, value in pairs(options) do
   vim.opt[option] = value
 end
+
+-- global opts
+local global_options = {
+  python_recommended_style = 0,                   -- dont let python-lsp override things like shiftwidth
+}
+for option, value in pairs(global_options) do
+  vim.g[option] = value
+end
+

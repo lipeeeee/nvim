@@ -7,7 +7,8 @@ end
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufEnter",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- Post-2024 refactor API: nvim-treesitter.configs is gone.
       -- The plugin now only manages parser installation; highlight/indent
