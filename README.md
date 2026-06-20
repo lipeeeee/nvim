@@ -20,7 +20,7 @@ nvim
 ```
 
 # Dependencies
-- 0.9.2+ nvim
+- 0.12.1+ nvim
 - npm, fzf, python and a C compiler for basic dependencies
 
 # Better workflow 
